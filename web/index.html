@@ -1417,11 +1417,244 @@
             </div>
         </section>
 
-        <!-- Budget Section (Placeholder) -->
+        <!-- Budget Calculator Section -->
         <section id="budget" class="section">
             <div class="container">
-                <h2 class="section-title">預算總覽</h2>
-                <p class="section-intro">預算計算器將在後續步驟中加入</p>
+                <h2 class="section-title">💰 預算計算器</h2>
+                <p class="section-intro">互動式預算計算工具，根據您的需求自訂旅程預算</p>
+                
+                <div class="budget-calculator-container">
+                    <!-- Calculator Controls -->
+                    <div class="calculator-panel">
+                        <h3 class="panel-title">自訂您的預算</h3>
+                        
+                        <!-- Fixed Costs -->
+                        <div class="budget-category">
+                            <h4 class="category-title">
+                                <span class="category-icon">🎫</span>
+                                固定費用
+                            </h4>
+                            <div class="budget-items">
+                                <div class="budget-item">
+                                    <label class="item-label">
+                                        <input type="checkbox" class="budget-checkbox" id="transport-basic" checked disabled>
+                                        <span>基本交通（捷運、公車）</span>
+                                    </label>
+                                    <span class="item-cost">NT$ 1,000-1,700</span>
+                                </div>
+                                <div class="budget-item">
+                                    <label class="item-label">
+                                        <input type="checkbox" class="budget-checkbox" id="meals-basic" checked disabled>
+                                        <span>基本餐飲</span>
+                                    </label>
+                                    <span class="item-cost">NT$ 2,500-4,000</span>
+                                </div>
+                                <div class="budget-item">
+                                    <label class="item-label">
+                                        <input type="checkbox" class="budget-checkbox" id="tickets-basic" checked disabled>
+                                        <span>景點門票</span>
+                                    </label>
+                                    <span class="item-cost">NT$ 1,150-1,250</span>
+                                </div>
+                                <div class="budget-item">
+                                    <label class="item-label">
+                                        <input type="checkbox" class="budget-checkbox" id="accommodation" checked disabled>
+                                        <span>住宿（3晚）</span>
+                                    </label>
+                                    <span class="item-cost">NT$ 4,500-6,500</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Optional Activities -->
+                        <div class="budget-category">
+                            <h4 class="category-title">
+                                <span class="category-icon">⭐</span>
+                                選配項目
+                            </h4>
+                            <div class="budget-items">
+                                <div class="budget-item">
+                                    <label class="item-label">
+                                        <input type="checkbox" class="budget-checkbox optional" id="airport-shuttle" data-min="400" data-max="500">
+                                        <span>機場包車接送</span>
+                                    </label>
+                                    <span class="item-cost">NT$ 400-500</span>
+                                </div>
+                                <div class="budget-item">
+                                    <label class="item-label">
+                                        <input type="checkbox" class="budget-checkbox optional" id="day4-charter" data-min="500" data-max="650">
+                                        <span>第四天包車（九份-機場）</span>
+                                    </label>
+                                    <span class="item-cost">NT$ 500-650</span>
+                                </div>
+                                <div class="budget-item">
+                                    <label class="item-label">
+                                        <input type="checkbox" class="budget-checkbox optional" id="yehliu" data-min="120" data-max="120">
+                                        <span>野柳地質公園</span>
+                                    </label>
+                                    <span class="item-cost">NT$ 120</span>
+                                </div>
+                                <div class="budget-item">
+                                    <label class="item-label">
+                                        <input type="checkbox" class="budget-checkbox optional" id="fine-dining" data-min="200" data-max="500" checked>
+                                        <span>高級餐廳升級</span>
+                                    </label>
+                                    <span class="item-cost">NT$ 200-500</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Custom Amounts -->
+                        <div class="budget-category">
+                            <h4 class="category-title">
+                                <span class="category-icon">🛍️</span>
+                                自訂金額
+                            </h4>
+                            <div class="budget-items">
+                                <div class="budget-item custom">
+                                    <label class="item-label">
+                                        <span>購物預算</span>
+                                    </label>
+                                    <div class="amount-input">
+                                        <span class="currency">NT$</span>
+                                        <input type="number" class="custom-amount" id="shopping-budget" min="0" max="10000" step="100" value="1000">
+                                    </div>
+                                </div>
+                                <div class="budget-item custom">
+                                    <label class="item-label">
+                                        <span>伴手禮預算</span>
+                                    </label>
+                                    <div class="amount-input">
+                                        <span class="currency">NT$</span>
+                                        <input type="number" class="custom-amount" id="souvenir-budget" min="0" max="5000" step="100" value="500">
+                                    </div>
+                                </div>
+                                <div class="budget-item custom">
+                                    <label class="item-label">
+                                        <span>緊急預備金</span>
+                                    </label>
+                                    <div class="amount-input">
+                                        <span class="currency">NT$</span>
+                                        <input type="number" class="custom-amount" id="emergency-fund" min="0" max="5000" step="100" value="1000">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Currency Converter -->
+                        <div class="budget-category">
+                            <h4 class="category-title">
+                                <span class="category-icon">💱</span>
+                                貨幣轉換
+                            </h4>
+                            <div class="currency-converter">
+                                <p class="converter-note">💡 匯率：1 HKD ≈ 4 TWD（參考）</p>
+                                <div class="converter-toggle">
+                                    <button id="toggle-currency" class="toggle-btn">切換為港幣顯示</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Budget Summary -->
+                    <div class="budget-summary-panel">
+                        <h3 class="panel-title">預算總覽</h3>
+                        
+                        <div class="summary-breakdown">
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">固定費用</span>
+                                <span class="breakdown-amount" id="fixed-cost">NT$ 9,150-13,450</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">選配項目</span>
+                                <span class="breakdown-amount" id="optional-cost">NT$ 200-500</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">自訂金額</span>
+                                <span class="breakdown-amount" id="custom-cost">NT$ 2,500</span>
+                            </div>
+                            <div class="breakdown-divider"></div>
+                            <div class="breakdown-item total">
+                                <span class="breakdown-label">每人預算範圍</span>
+                                <span class="breakdown-amount large" id="total-per-person">NT$ 11,850-16,450</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-label">8人團體總預算</span>
+                                <span class="breakdown-amount" id="total-group">NT$ 94,800-131,600</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Budget Chart Placeholder -->
+                        <div class="budget-chart">
+                            <h4 class="chart-title">預算分布</h4>
+                            <div class="chart-bars">
+                                <div class="chart-bar">
+                                    <div class="bar-label">住宿</div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill accommodation" id="bar-accommodation" style="width: 35%"></div>
+                                        <span class="bar-percent" id="percent-accommodation">35%</span>
+                                    </div>
+                                </div>
+                                <div class="chart-bar">
+                                    <div class="bar-label">餐飲</div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill meals" id="bar-meals" style="width: 28%"></div>
+                                        <span class="bar-percent" id="percent-meals">28%</span>
+                                    </div>
+                                </div>
+                                <div class="chart-bar">
+                                    <div class="bar-label">交通</div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill transport" id="bar-transport" style="width: 12%"></div>
+                                        <span class="bar-percent" id="percent-transport">12%</span>
+                                    </div>
+                                </div>
+                                <div class="chart-bar">
+                                    <div class="bar-label">門票</div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill tickets" id="bar-tickets" style="width: 9%"></div>
+                                        <span class="bar-percent" id="percent-tickets">9%</span>
+                                    </div>
+                                </div>
+                                <div class="chart-bar">
+                                    <div class="bar-label">其他</div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill other" id="bar-other" style="width: 16%"></div>
+                                        <span class="bar-percent" id="percent-other">16%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="budget-actions">
+                            <button class="action-btn primary" id="print-budget">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 5V1h8v4M4 11H2V6h12v5h-2M4 11v4h8v-4" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                                列印預算
+                            </button>
+                            <button class="action-btn secondary" id="reset-budget">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M14 8A6 6 0 104 2.5" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M4 1v3h3" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                                重設預算
+                            </button>
+                        </div>
+                        
+                        <!-- Budget Tips -->
+                        <div class="budget-tips">
+                            <h4>💡 省錢小貼士</h4>
+                            <ul>
+                                <li>使用悠遊卡搭乘捷運有折扣</li>
+                                <li>夜市美食比餐廳便宜且道地</li>
+                                <li>免費景點：地熱谷、北投圖書館、溫泉博物館</li>
+                                <li>部分餐廳、景點有信用卡優惠</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

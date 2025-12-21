@@ -498,3 +498,32 @@
         height: 350px;
     }
 }
+
+/* Budget Calculator Mobile Responsive */
+@media (max-width: 767px) {
+    .budget-calculator-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .calculator-panel,
+    .budget-summary-panel {
+        padding: var(--spacing-lg);
+    }
+    
+    .panel-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .custom-amount {
+        width: 100px;
+    }
+    
+    .chart-bar {
+        grid-template-columns: 60px 1fr;
+    }
+    
+    .budget-actions {
+        flex-direction: column;
+    }
+}
