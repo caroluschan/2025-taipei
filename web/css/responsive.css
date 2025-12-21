@@ -1,0 +1,338 @@
+/* ===================================
+   Responsive Design
+   Mobile-First Approach
+   =================================== */
+
+/* ===================================
+   Mobile Devices (Default - up to 767px)
+   =================================== */
+@media (max-width: 767px) {
+    /* Typography adjustments */
+    html {
+        font-size: 14px;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .hero-date {
+        font-size: var(--font-size-base);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    /* Container adjustments */
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    /* Navigation - Mobile Menu */
+    .header-decoration {
+        display: none; /* Hide Christmas decorations on mobile */
+    }
+    
+    .nav-brand h1 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .brand-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-white);
+        flex-direction: column;
+        gap: 0;
+        box-shadow: var(--shadow-lg);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-base);
+    }
+    
+    .nav-menu.active {
+        max-height: 500px;
+        padding-bottom: var(--spacing-md);
+    }
+    
+    .nav-menu li {
+        border-bottom: 1px solid var(--color-gray-200);
+    }
+    
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: var(--spacing-md) var(--spacing-lg);
+        border-radius: 0;
+    }
+    
+    .nav-menu a::before {
+        display: none; /* Hide underline animation on mobile */
+    }
+    
+    /* Hero adjustments */
+    .hero {
+        min-height: 500px;
+    }
+    
+    .hero-content {
+        padding: var(--spacing-2xl) var(--spacing-md);
+    }
+    
+    .hero-emoji {
+        font-size: 2.5rem;
+    }
+    
+    .hero-badges {
+        gap: var(--spacing-sm);
+    }
+    
+    .badge {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+    
+    /* Hide some floating decorations on mobile for cleaner look */
+    .floating-decoration {
+        font-size: 1.5rem;
+    }
+    
+    .floating-decoration:nth-child(n+5) {
+        display: none;
+    }
+    
+    /* Grid layouts - Single column */
+    .overview-grid,
+    .members-grid,
+    .accommodation-grid,
+    .days-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Member cards - Stack vertically */
+    .member-info {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Card adjustments */
+    .card,
+    .overview-card,
+    .member-card,
+    .hotel-card,
+    .day-card,
+    .tip-card {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* ===================================
+   Tablets - Portrait (768px - 991px)
+   =================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    /* Grids - 2 columns */
+    .overview-grid,
+    .days-grid,
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Members - Keep stacked */
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Accommodation - 2 columns if enough space */
+    .accommodation-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: var(--font-size-4xl);
+    }
+}
+
+/* ===================================
+   Tablets - Landscape & Small Desktops (992px - 1199px)
+   =================================== */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    /* Grids - 2-3 columns */
+    .overview-grid,
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .days-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===================================
+   Desktops (1200px and up)
+   =================================== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    /* Full grid layouts */
+    .overview-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .accommodation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .days-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .tips-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ===================================
+   Large Desktops (1400px and up)
+   =================================== */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    html {
+        font-size: 18px;
+    }
+}
+
+/* ===================================
+   Landscape Orientation
+   =================================== */
+@media (orientation: landscape) and (max-height: 600px) {
+    .hero {
+        min-height: 350px;
+    }
+    
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+}
+
+/* ===================================
+   High DPI Displays (Retina)
+   =================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimize for high-resolution displays */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* ===================================
+   Accessibility - Reduced Motion
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===================================
+   Dark Mode Support (Optional)
+   =================================== */
+@media (prefers-color-scheme: dark) {
+    /* Future implementation for dark mode */
+    /* Uncomment and customize as needed */
+    
+    /*
+    :root {
+        --color-white: #1a1a1a;
+        --color-gray-50: #2d2d2d;
+        --color-gray-100: #3a3a3a;
+        --color-gray-900: #f9fafb;
+    }
+    
+    body {
+        background-color: var(--color-white);
+        color: var(--color-gray-900);
+    }
+    */
+}
+
+/* ===================================
+   Print Specific Adjustments
+   =================================== */
+@media print {
+    /* Hide navigation for print */
+    #header,
+    .nav-toggle {
+        display: none !important;
+    }
+    
+    /* Adjust spacing for print */
+    .section {
+        page-break-inside: avoid;
+    }
+    
+    .card,
+    .overview-card,
+    .member-card,
+    .hotel-card {
+        page-break-inside: avoid;
+    }
+}
