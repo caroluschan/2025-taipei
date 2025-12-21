@@ -221,6 +221,135 @@
     }
 
     // ===================================
+    // Accordion Functionality
+    // ===================================
+    function initAccordions() {
+        const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+        
+        if (accordionTriggers.length === 0) return;
+
+        accordionTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other accordions (optional - comment out for multi-open behavior)
+                accordionTriggers.forEach(otherTrigger => {
+                    if (otherTrigger !== this) {
+                        otherTrigger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Toggle current accordion
+                this.setAttribute('aria-expanded', !isExpanded);
+                
+                // Smooth scroll to accordion if opening and it's near bottom of viewport
+                if (!isExpanded) {
+                    setTimeout(() => {
+                        const rect = this.getBoundingClientRect();
+                        const headerHeight = header ? header.offsetHeight : 0;
+                        
+                        if (rect.top < headerHeight + 20) {
+                            const targetPosition = this.offsetTop - headerHeight - 20;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 100);
+                }
+            });
+        });
+    }
+
+    // ===================================
+    // Activity Details Toggle
+    // ===================================
+    function initActivityToggles() {
+        const toggleButtons = document.querySelectorAll('.toggle-details');
+        
+        if (toggleButtons.length === 0) return;
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                // Toggle current activity
+                this.setAttribute('aria-expanded', !isExpanded);
+                
+                // Optional: Auto-scroll to keep activity in view when expanding
+                if (!isExpanded) {
+                    setTimeout(() => {
+                        const rect = this.getBoundingClientRect();
+                        const headerHeight = header ? header.offsetHeight : 0;
+                        
+                        if (rect.top < headerHeight) {
+                            window.scrollTo({
+                                top: window.pageYOffset + rect.top - headerHeight - 20,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 350); // Wait for expansion animation
+                }
+            });
+        });
+    }
+
+    // ===================================
+    // Day Navigation
+    // ===================================
+    function initDayNavigation() {
+        const dayNavBtns = document.querySelectorAll('.day-nav-btn');
+        const daySections = document.querySelectorAll('.day-section');
+        
+        if (dayNavBtns.length === 0 || daySections.length === 0) return;
+
+        // Hide all days except first one initially
+        daySections.forEach((section, index) => {
+            if (index > 0) {
+                section.style.display = 'none';
+            }
+        });
+
+        dayNavBtns.forEach((btn, index) => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active button
+                dayNavBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show corresponding day section
+                daySections.forEach((section, i) => {
+                    if (i === index) {
+                        section.style.display = 'block';
+                        
+                        // Smooth scroll to itinerary section
+                        const itinerarySection = document.getElementById('itinerary');
+                        if (itinerarySection && header) {
+                            const targetPosition = itinerarySection.offsetTop - header.offsetHeight;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Handle hash navigation on page load
+        const hash = window.location.hash;
+        if (hash && hash.match(/#day\d/)) {
+            const dayNum = parseInt(hash.replace('#day', '')) - 1;
+            if (dayNum >= 0 && dayNum < dayNavBtns.length) {
+                dayNavBtns[dayNum].click();
+            }
+        }
+    }
+
+    // ===================================
     // Utility: Debounce Function
     // ===================================
     function debounce(func, wait = 20, immediate = true) {
@@ -250,6 +379,9 @@
         initScrollToTop();
         initLazyLoad();
         initScrollAnimations();
+        initAccordions();
+        initActivityToggles();
+        initDayNavigation();
 
         console.log('Taipei Christmas Travel Guide 2025 - Initialized');
     }

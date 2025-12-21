@@ -62,6 +62,7 @@
                     <li role="none"><a href="#overview" role="menuitem">旅程概要</a></li>
                     <li role="none"><a href="#members" role="menuitem">成員資料</a></li>
                     <li role="none"><a href="#accommodation" role="menuitem">住宿資訊</a></li>
+                    <li role="none"><a href="#weather" role="menuitem">天氣預報</a></li>
                     <li role="none"><a href="#itinerary" role="menuitem">每日行程</a></li>
                     <li role="none"><a href="#budget" role="menuitem">預算總覽</a></li>
                     <li role="none"><a href="#tips" role="menuitem">實用資訊</a></li>
@@ -140,6 +141,46 @@
                         <p class="text-muted">靈活行程安排</p>
                     </div>
                 </div>
+                
+                <!-- Quick Facts Accordion -->
+                <div class="accordion-container">
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span class="accordion-title">📋 快速了解行程重點</span>
+                        <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <div class="quick-facts-grid">
+                                <div class="quick-fact">
+                                    <h4>🎄 特別日子</h4>
+                                    <p>聖誕節四日遊，感受台北聖誕氣氛</p>
+                                </div>
+                                <div class="quick-fact">
+                                    <h4>🏨 住宿亮點</h4>
+                                    <p>包含北投溫泉會館體驗（12/27）</p>
+                                </div>
+                                <div class="quick-fact">
+                                    <h4>🎯 必玩項目</h4>
+                                    <p>兒童新樂園咖啡杯、九份老街、故宮博物院</p>
+                                </div>
+                                <div class="quick-fact">
+                                    <h4>🍜 美食主題</h4>
+                                    <p>夜市小吃、鼎泰豐、在地特色餐廳</p>
+                                </div>
+                                <div class="quick-fact">
+                                    <h4>♿ 無障礙考量</h4>
+                                    <p>已考慮成員腿傷，安排適當休息和交通</p>
+                                </div>
+                                <div class="quick-fact">
+                                    <h4>💰 預算範圍</h4>
+                                    <p>中高收入定位，平衡CP值與體驗</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -147,112 +188,174 @@
         <section id="members" class="section section-alt">
             <div class="container">
                 <h2 class="section-title">成員資料</h2>
+                <p class="section-intro">認識我們的旅行團隊成員</p>
+                
                 <div class="members-grid">
-                    <!-- Couple 1 -->
+                    <!-- Couple 1: Charles & Annie -->
                     <div class="member-card">
                         <div class="couple-header">
-                            <h3>Couple 1</h3>
-                            <span class="couple-badge">💑</span>
+                            <h3>Couple 1 💑</h3>
+                            <div class="couple-icons">
+                                <span title="天竺鼠飼主">🐹</span>
+                            </div>
                         </div>
                         <div class="member-info">
                             <div class="member">
-                                <h4>Charles</h4>
-                                <ul>
-                                    <li>美食旅行家</li>
-                                    <li>ENFP性格</li>
-                                    <li>首次到台北</li>
-                                    <li>動漫愛好者</li>
-                                    <li>軟件工程師</li>
+                                <div class="member-name-section">
+                                    <h4>Charles</h4>
+                                    <div class="member-icons">
+                                        <span title="美食家">🍜</span>
+                                        <span title="動漫愛好者">🎌</span>
+                                        <span title="軟件工程師">💻</span>
+                                    </div>
+                                </div>
+                                <ul class="member-traits">
+                                    <li><span class="trait-icon">🌟</span> 美食旅行家</li>
+                                    <li><span class="trait-icon">✨</span> ENFP性格</li>
+                                    <li><span class="trait-icon">🆕</span> 首次到台北</li>
+                                    <li><span class="trait-icon">🎌</span> 動漫愛好者</li>
+                                    <li><span class="trait-icon">💻</span> 軟件工程師</li>
                                 </ul>
                             </div>
                             <div class="member">
-                                <h4>Annie</h4>
-                                <ul>
-                                    <li>隨和旅客</li>
-                                    <li>喜歡探索新事物</li>
-                                    <li>⚠️ 腿部受傷，不能長時間步行</li>
-                                    <li>會計師</li>
+                                <div class="member-name-section">
+                                    <h4>Annie</h4>
+                                    <div class="member-icons">
+                                        <span title="探索者">🗺️</span>
+                                        <span title="會計師">📊</span>
+                                    </div>
+                                </div>
+                                <ul class="member-traits">
+                                    <li><span class="trait-icon">😊</span> 隨和旅客</li>
+                                    <li><span class="trait-icon">🔍</span> 喜歡探索新事物</li>
+                                    <li><span class="trait-icon warning">⚠️</span> 腿部受傷，不能長時間步行</li>
+                                    <li><span class="trait-icon">📊</span> 會計師</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Couple 2 -->
+                    <!-- Couple 2: Lapmei & Kristal -->
                     <div class="member-card">
                         <div class="couple-header">
-                            <h3>Couple 2</h3>
-                            <span class="couple-badge">💑</span>
+                            <h3>Couple 2 💑</h3>
+                            <div class="couple-icons">
+                                <span title="貓奴">🐱</span>
+                            </div>
                         </div>
                         <div class="member-info">
                             <div class="member">
-                                <h4>Lapmei</h4>
-                                <ul>
-                                    <li>健碩體格</li>
-                                    <li>大胃王</li>
-                                    <li>聰明文化人</li>
-                                    <li>銀行家</li>
+                                <div class="member-name-section">
+                                    <h4>Lapmei</h4>
+                                    <div class="member-icons">
+                                        <span title="大胃王">🍽️</span>
+                                        <span title="銀行家">💼</span>
+                                        <span title="健碩">💪</span>
+                                    </div>
+                                </div>
+                                <ul class="member-traits">
+                                    <li><span class="trait-icon">💪</span> 健碩體格</li>
+                                    <li><span class="trait-icon">🍽️</span> 大胃王</li>
+                                    <li><span class="trait-icon">🧠</span> 聰明文化人</li>
+                                    <li><span class="trait-icon">💼</span> 銀行家</li>
                                 </ul>
                             </div>
                             <div class="member">
-                                <h4>Kristal</h4>
-                                <ul>
-                                    <li>能應付緊湊行程</li>
-                                    <li>喜歡CP值高的體驗</li>
-                                    <li>去過台北</li>
-                                    <li>臨床研究助理</li>
+                                <div class="member-name-section">
+                                    <h4>Kristal</h4>
+                                    <div class="member-icons">
+                                        <span title="台北經驗">✈️</span>
+                                        <span title="CP值達人">💎</span>
+                                        <span title="研究助理">🔬</span>
+                                    </div>
+                                </div>
+                                <ul class="member-traits">
+                                    <li><span class="trait-icon">⚡</span> 能應付緊湊行程</li>
+                                    <li><span class="trait-icon">💎</span> 喜歡CP值高的體驗</li>
+                                    <li><span class="trait-icon">✈️</span> 去過台北</li>
+                                    <li><span class="trait-icon">🔬</span> 臨床研究助理</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Couple 3 -->
+                    <!-- Couple 3: Fat & Maggie -->
                     <div class="member-card">
                         <div class="couple-header">
-                            <h3>Couple 3</h3>
-                            <span class="couple-badge">💑</span>
+                            <h3>Couple 3 💑</h3>
+                            <div class="couple-icons">
+                                <span title="貓奴">🐱</span>
+                            </div>
                         </div>
                         <div class="member-info">
                             <div class="member">
-                                <h4>Fat</h4>
-                                <ul>
-                                    <li>計劃周詳旅客</li>
-                                    <li>桌遊愛好者</li>
-                                    <li>聰明文化人</li>
-                                    <li>建築工程顧問</li>
+                                <div class="member-name-section">
+                                    <h4>Fat</h4>
+                                    <div class="member-icons">
+                                        <span title="桌遊愛好者">🎲</span>
+                                        <span title="計劃達人">📋</span>
+                                        <span title="建築工程顧問">🏗️</span>
+                                    </div>
+                                </div>
+                                <ul class="member-traits">
+                                    <li><span class="trait-icon">📋</span> 計劃周詳旅客</li>
+                                    <li><span class="trait-icon">🎲</span> 桌遊愛好者</li>
+                                    <li><span class="trait-icon">🧠</span> 聰明文化人</li>
+                                    <li><span class="trait-icon">🏗️</span> 建築工程顧問</li>
                                 </ul>
                             </div>
                             <div class="member">
-                                <h4>Maggie</h4>
-                                <ul>
-                                    <li>隨和旅客</li>
-                                    <li>資訊科技工作者</li>
+                                <div class="member-name-section">
+                                    <h4>Maggie</h4>
+                                    <div class="member-icons">
+                                        <span title="IT工作者">💻</span>
+                                    </div>
+                                </div>
+                                <ul class="member-traits">
+                                    <li><span class="trait-icon">😊</span> 隨和旅客</li>
+                                    <li><span class="trait-icon">💻</span> 資訊科技工作者</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Couple 4 -->
+                    <!-- Couple 4: Kris & Tiffany -->
                     <div class="member-card">
                         <div class="couple-header">
-                            <h3>Couple 4</h3>
-                            <span class="couple-badge">💑</span>
+                            <h3>Couple 4 💑</h3>
+                            <div class="couple-icons">
+                                <span title="貓奴">🐱</span>
+                            </div>
                         </div>
                         <div class="member-info">
                             <div class="member">
-                                <h4>Kris</h4>
-                                <ul>
-                                    <li>表面隨意內心有期望</li>
-                                    <li>動漫愛好者</li>
-                                    <li>美食家</li>
-                                    <li>甲方工程師</li>
+                                <div class="member-name-section">
+                                    <h4>Kris</h4>
+                                    <div class="member-icons">
+                                        <span title="動漫愛好者">🎌</span>
+                                        <span title="美食家">🍜</span>
+                                        <span title="工程師">⚙️</span>
+                                    </div>
+                                </div>
+                                <ul class="member-traits">
+                                    <li><span class="trait-icon">🎭</span> 表面隨意內心有期望</li>
+                                    <li><span class="trait-icon">🎌</span> 動漫愛好者</li>
+                                    <li><span class="trait-icon">🍜</span> 美食家</li>
+                                    <li><span class="trait-icon">⚙️</span> 甲方工程師</li>
                                 </ul>
                             </div>
                             <div class="member">
-                                <h4>Tiffany</h4>
-                                <ul>
-                                    <li>計劃周詳旅客</li>
-                                    <li>動漫愛好者</li>
-                                    <li>工程工作者</li>
+                                <div class="member-name-section">
+                                    <h4>Tiffany</h4>
+                                    <div class="member-icons">
+                                        <span title="動漫愛好者">🎌</span>
+                                        <span title="工程師">⚙️</span>
+                                    </div>
+                                </div>
+                                <ul class="member-traits">
+                                    <li><span class="trait-icon">📋</span> 計劃周詳旅客</li>
+                                    <li><span class="trait-icon">🎌</span> 動漫愛好者</li>
+                                    <li><span class="trait-icon">⚙️</span> 工程工作者</li>
                                 </ul>
                             </div>
                         </div>
@@ -261,7 +364,12 @@
 
                 <!-- Pet Owners Note -->
                 <div class="info-box">
-                    <p>🐱 Couple 2、3、4 皆為貓奴 | 🐹 Couple 1 為天竺鼠飼主</p>
+                    <div class="info-box-icon">🐾</div>
+                    <div class="info-box-content">
+                        <p><strong>寵物飼主資訊：</strong></p>
+                        <p>🐱 Couple 2、3、4 皆為貓奴 | 🐹 Couple 1 為天竺鼠飼主</p>
+                        <p class="text-muted">（大家都喜歡毛茸茸的小動物！）</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -301,31 +409,977 @@
             </div>
         </section>
 
-        <!-- Itinerary Section (Placeholder) -->
-        <section id="itinerary" class="section section-alt">
+        <!-- Weather Section -->
+        <section id="weather" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">天氣預報</h2>
+                <p class="section-intro">12月25-28日台北天氣資訊</p>
+                
+                <div class="weather-overview">
+                    <div class="weather-main">
+                        <div class="weather-icon-large">
+                            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Sun -->
+                                <circle cx="60" cy="50" r="20" fill="#f4c430" opacity="0.8"/>
+                                <!-- Cloud -->
+                                <path d="M40 60 Q35 60 35 65 Q35 70 40 70 L80 70 Q85 70 85 65 Q85 60 80 60 Q80 55 75 55 Q75 50 70 50 Q65 50 65 55 Q60 55 60 60 Z" fill="#9ca3af"/>
+                                <path d="M50 70 Q45 70 45 75 Q45 80 50 80 L85 80 Q90 80 90 75 Q90 70 85 70" fill="#d1d5db"/>
+                            </svg>
+                        </div>
+                        <div class="weather-info">
+                            <h3>多雲，偶有小雨 ☁️🌦️</h3>
+                            <p class="weather-season">冬季氣候</p>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-details-grid">
+                        <div class="weather-detail-card">
+                            <div class="weather-detail-icon">🌡️</div>
+                            <h4>白天溫度</h4>
+                            <p class="weather-value">15-20°C</p>
+                            <p class="text-muted">舒適宜人</p>
+                        </div>
+                        
+                        <div class="weather-detail-card">
+                            <div class="weather-detail-icon">🌙</div>
+                            <h4>夜晚溫度</h4>
+                            <p class="weather-value">12-15°C</p>
+                            <p class="text-muted">稍涼需外套</p>
+                        </div>
+                        
+                        <div class="weather-detail-card">
+                            <div class="weather-detail-icon">💧</div>
+                            <h4>降雨機率</h4>
+                            <p class="weather-value">40-60%</p>
+                            <p class="text-muted">偶有小雨</p>
+                        </div>
+                        
+                        <div class="weather-detail-card">
+                            <div class="weather-detail-icon">💨</div>
+                            <h4>濕度</h4>
+                            <p class="weather-value">高濕度</p>
+                            <p class="text-muted">台北冬季潮濕</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Clothing Recommendations -->
+                <div class="clothing-recommendations">
+                    <h3 class="recommendations-title">👔 建議穿著</h3>
+                    <div class="clothing-items">
+                        <div class="clothing-item">
+                            <span class="clothing-icon">👕</span>
+                            <span>長袖上衣</span>
+                        </div>
+                        <div class="clothing-item">
+                            <span class="clothing-icon">🧥</span>
+                            <span>輕薄外套</span>
+                        </div>
+                        <div class="clothing-item">
+                            <span class="clothing-icon">☂️</span>
+                            <span>雨傘/雨衣</span>
+                        </div>
+                        <div class="clothing-item">
+                            <span class="clothing-icon">🧤</span>
+                            <span>防水外套</span>
+                        </div>
+                        <div class="clothing-item">
+                            <span class="clothing-icon">👟</span>
+                            <span>防滑鞋</span>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-note">
+                        <div class="note-icon">💡</div>
+                        <div class="note-content">
+                            <strong>溫馨提示：</strong>
+                            <p>台北冬季潮濕多雨，建議攜帶輕便雨具和防水外套。洋蔥式穿搭最為適合，方便根據室內外溫差調整。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Itinerary Section -->
+        <section id="itinerary" class="section">
             <div class="container">
                 <h2 class="section-title">每日行程</h2>
-                <p class="section-intro">詳細的每日行程將在後續步驟中加入</p>
-                <div class="days-grid">
-                    <div class="day-card">
-                        <h3>Day 1</h3>
-                        <p class="day-date">12月25日（三）</p>
-                        <p class="day-theme">抵達台北 + 都市探索</p>
+                <p class="section-intro">四天三夜台北聖誕之旅完整規劃</p>
+                
+                <!-- Day Navigation -->
+                <div class="day-nav">
+                    <a href="#day1" class="day-nav-btn active">Day 1</a>
+                    <a href="#day2" class="day-nav-btn">Day 2</a>
+                    <a href="#day3" class="day-nav-btn">Day 3</a>
+                    <a href="#day4" class="day-nav-btn">Day 4</a>
+                </div>
+
+                <!-- Day 1: 12月25日 -->
+                <div id="day1" class="day-section">
+                    <div class="day-header">
+                        <div class="day-number">Day 1</div>
+                        <div class="day-info">
+                            <h3 class="day-title">抵達台北 + 都市探索 🎄</h3>
+                            <p class="day-date">12月25日（三）聖誕節</p>
+                        </div>
+                        <div class="day-budget-summary">
+                            <span class="budget-label">預算</span>
+                            <span class="budget-amount">NT$ 2,200-3,700/人</span>
+                        </div>
                     </div>
-                    <div class="day-card">
-                        <h3>Day 2</h3>
-                        <p class="day-date">12月26日（四）</p>
-                        <p class="day-theme">必玩咖啡杯 + 文化探索</p>
+
+                    <div class="timeline">
+                        <!-- Morning -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">✈️</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-time">09:30 - 12:30</div>
+                                        <span class="activity-badge morning">上午</span>
+                                    </div>
+                                    <h4 class="activity-title">抵達 & 入住</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <div class="schedule-list">
+                                            <div class="schedule-item">
+                                                <span class="time">09:30</span>
+                                                <span class="desc">抵達桃園機場 → 提取行李、海關</span>
+                                            </div>
+                                            <div class="schedule-item">
+                                                <span class="time">10:00</span>
+                                                <span class="desc">前往台北市區（機場捷運約35-40分鐘）</span>
+                                            </div>
+                                            <div class="schedule-item">
+                                                <span class="time">11:00</span>
+                                                <span class="desc">酒店 Check-in - 台北見潭璞旅</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$160/人（捷運）</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lunch -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🍜</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card meal">
+                                    <div class="activity-header">
+                                        <div class="activity-time">12:30 - 14:00</div>
+                                        <span class="activity-badge meal">午餐</span>
+                                    </div>
+                                    <h4 class="activity-title">鼎泰豐或台北101美食街</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <div class="option-box recommended">
+                                            <span class="option-badge">推薦</span>
+                                            <h5>鼎泰豐（信義店）</h5>
+                                            <p class="location">📍 台北101購物中心B1</p>
+                                            <p><strong>必點：</strong>小籠包、蝦仁炒飯、紅油抄手</p>
+                                            <p class="warning">⚠️ 可能需排隊30-60分鐘</p>
+                                        </div>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$400-600/人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Afternoon -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🏙️</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card attraction">
+                                    <div class="activity-header">
+                                        <div class="activity-time">14:00 - 18:00</div>
+                                        <span class="activity-badge afternoon">下午</span>
+                                    </div>
+                                    <h4 class="activity-title">台北101 + 信義區</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <div class="attraction-item">
+                                            <h5>🏢 台北101觀景台（14:00-15:30）</h5>
+                                            <p class="location">📍 89樓觀景台，360度城市景觀</p>
+                                            <ul class="highlights">
+                                                <li>全台最高觀景台</li>
+                                                <li>可看到整個台北盆地</li>
+                                                <li>89樓室內 + 戶外觀景台</li>
+                                            </ul>
+                                            <div class="tags">
+                                                <span class="tag">🕐 10:00-21:00</span>
+                                                <span class="tag">🎫 NT$600/人</span>
+                                            </div>
+                                        </div>
+                                        <div class="attraction-item">
+                                            <h5>🛍️ 台北101購物（15:30-16:30）</h5>
+                                            <p>奢華品牌、紀念品、伴手禮</p>
+                                        </div>
+                                        <div class="attraction-item">
+                                            <h5>📚 信義區逛街（16:30-18:00）</h5>
+                                            <p>誠品書店、新光三越</p>
+                                        </div>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$600/人（門票）+ 購物自選</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dinner -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🌃</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card meal">
+                                    <div class="activity-header">
+                                        <div class="activity-time">18:30 - 20:30</div>
+                                        <span class="activity-badge meal">晚餐</span>
+                                    </div>
+                                    <h4 class="activity-title">饒河街夜市</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <p class="location">📍 捷運松山站</p>
+                                        <p class="transport">🚇 約20分鐘車程</p>
+                                        <div class="must-eat">
+                                            <h5>必吃美食：</h5>
+                                            <div class="food-grid">
+                                                <span class="food-tag">🥟 福州世祖胡椒餅 NT$50 ⭐</span>
+                                                <span class="food-tag">🍖 陳董藥燉排骨 NT$120</span>
+                                                <span class="food-tag">🥘 臭豆腐 NT$60</span>
+                                                <span class="food-tag">🦪 蚵仔煎 NT$70</span>
+                                                <span class="food-tag">🌯 東發號潤餅 NT$50</span>
+                                                <span class="food-tag">🍡 鮮奶麻糬 NT$40</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$300-500/人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Evening -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🎅</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-time">21:00 - 22:30</div>
+                                        <span class="activity-badge evening">晚上</span>
+                                    </div>
+                                    <h4 class="activity-title">西門町聖誕氛圍 🎄</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <p class="transport">🚇 捷運松山站 → 西門站（約30分鐘）</p>
+                                        <ul class="highlights">
+                                            <li>🎄 聖誕裝飾打卡</li>
+                                            <li>🏛️ 西門紅樓</li>
+                                            <li>🛍️ 逛街購物（潮流服飾、動漫周邊）</li>
+                                        </ul>
+                                        <p class="note">✨ 特別適合：Kris & Charles（動漫愛好者）</p>
+                                        <p class="note">🏨 23:00前返回酒店</p>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$200-500/人（購物）</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="day-card">
-                        <h3>Day 3</h3>
-                        <p class="day-date">12月27日（五）</p>
-                        <p class="day-theme">動漫之旅 + 溫泉體驗</p>
+
+                    <!-- Day Summary -->
+                    <div class="day-summary">
+                        <h4>💰 第一天預算總計</h4>
+                        <div class="budget-grid">
+                            <div class="budget-row">
+                                <span>🚇 交通</span>
+                                <span>NT$ 200-500/人</span>
+                            </div>
+                            <div class="budget-row">
+                                <span>🍜 餐飲</span>
+                                <span>NT$ 700-1,100/人</span>
+                            </div>
+                            <div class="budget-row">
+                                <span>🎫 門票</span>
+                                <span>NT$ 600/人</span>
+                            </div>
+                            <div class="budget-row">
+                                <span>🛍️ 購物</span>
+                                <span>NT$ 700-1,500/人</span>
+                            </div>
+                            <div class="budget-row total">
+                                <strong>總計</strong>
+                                <strong>NT$ 2,200-3,700/人</strong>
+                            </div>
+                        </div>
+                        <div class="alternative">
+                            <p><strong>🌧️ 備選方案：</strong>如天氣不佳，改為誠品書店、松菸文創園區</p>
+                        </div>
                     </div>
-                    <div class="day-card">
-                        <h3>Day 4</h3>
-                        <p class="day-date">12月28日（六）</p>
-                        <p class="day-theme">最後採購 + 返港</p>
+                </div>
+
+                <!-- Day 2: 12月26日 -->
+                <div id="day2" class="day-section">
+                    <div class="day-header">
+                        <div class="day-number">Day 2</div>
+                        <div class="day-info">
+                            <h3 class="day-title">必玩咖啡杯 + 文化探索 ☕</h3>
+                            <p class="day-date">12月26日（四）</p>
+                        </div>
+                        <div class="day-budget-summary">
+                            <span class="budget-label">預算</span>
+                            <span class="budget-amount">NT$ 1,700-2,450/人</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <!-- Morning -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🎡</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card attraction">
+                                    <div class="activity-header">
+                                        <div class="activity-time">09:00 - 12:30</div>
+                                        <span class="activity-badge morning">上午</span>
+                                    </div>
+                                    <h4 class="activity-title">臺北市立兒童新樂園 ⭐</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <p class="location">📍 捷運劍潭站轉乘公車</p>
+                                        <p class="highlight">⭐ <strong>重點：咖啡杯！</strong>團員必玩項目，挑戰最高轉速！</p>
+                                        <div class="info-list">
+                                            <p>🕐 開放時間：09:00-17:00</p>
+                                            <p>🎫 門票：NT$30/人</p>
+                                            <p>🎢 設施票：每項 NT$20-30</p>
+                                        </div>
+                                        <h5>建議遊玩：</h5>
+                                        <ul class="highlights">
+                                            <li>☕ 咖啡杯（必玩！）</li>
+                                            <li>🎡 摩天輪</li>
+                                            <li>🏴‍☠️ 海盜船</li>
+                                            <li>🎢 雲霄飛車</li>
+                                            <li>🚗 碰碰車</li>
+                                        </ul>
+                                        <p class="note">💡 注意：Annie可選擇較溫和的設施</p>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$200-300/人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lunch -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🍜</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card meal">
+                                    <div class="activity-header">
+                                        <div class="activity-time">12:30 - 14:00</div>
+                                        <span class="activity-badge meal">午餐</span>
+                                    </div>
+                                    <h4 class="activity-title">士林夜市</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <p class="location">📍 捷運劍潭站</p>
+                                        <div class="food-grid">
+                                            <span class="food-tag">🥞 大餅包小餅 NT$40</span>
+                                            <span class="food-tag">🍗 豪大大雞排 NT$70</span>
+                                            <span class="food-tag">🥟 上海生煎包 NT$60</span>
+                                            <span class="food-tag">🍧 辛發亭冰品 NT$80</span>
+                                            <span class="food-tag">🍜 蚵仔麵線 NT$60</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$300-500/人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Afternoon -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🏛️</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card attraction">
+                                    <div class="activity-header">
+                                        <div class="activity-time">14:30 - 17:30</div>
+                                        <span class="activity-badge afternoon">下午</span>
+                                    </div>
+                                    <h4 class="activity-title">故宮博物院</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <p class="location">📍 捷運士林站轉公車（約15分鐘）</p>
+                                        <div class="info-list">
+                                            <p>🕐 開放時間：09:00-17:00</p>
+                                            <p>🎫 門票：NT$350/人</p>
+                                            <p>🎧 語音導覽：NT$100（建議租借）</p>
+                                        </div>
+                                        <h5>必看展品：</h5>
+                                        <ul class="highlights">
+                                            <li>🥬 翠玉白菜</li>
+                                            <li>🥩 肉形石</li>
+                                            <li>🏺 毛公鼎</li>
+                                            <li>🖼️ 清明上河圖（如有展出）</li>
+                                        </ul>
+                                        <p class="note">💡 參觀時間：2.5-3小時，適合文化愛好者</p>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$350-450/人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dinner -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🍽️</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card meal">
+                                    <div class="activity-header">
+                                        <div class="activity-time">18:00 - 20:00</div>
+                                        <span class="activity-badge meal">晚餐</span>
+                                    </div>
+                                    <h4 class="activity-title">欣葉台菜或青葉台菜</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <div class="option-box recommended">
+                                            <span class="option-badge">推薦</span>
+                                            <h5>欣葉台菜（中山店）</h5>
+                                            <p class="location">📍 台北市中山區雙城街34-1號</p>
+                                            <p><strong>特色：</strong>經典台菜、份量足</p>
+                                            <p class="warning">⚠️ 需提前預訂！</p>
+                                        </div>
+                                        <h5>必點菜色（8人份）：</h5>
+                                        <ul class="food-list">
+                                            <li>佛跳牆、三杯雞、櫻花蝦炒飯</li>
+                                            <li>菜脯蛋、蒜泥白肉、宮保蝦球</li>
+                                        </ul>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$600-800/人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Evening -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🌙</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-time">20:30 - 22:00</div>
+                                        <span class="activity-badge evening">晚上</span>
+                                    </div>
+                                    <h4 class="activity-title">寧夏夜市散步</h4>
+                                    <div class="activity-details-inline">
+                                        <p class="location">📍 捷運雙連站步行</p>
+                                        <p>傳統台灣小吃：豬肝湯、蛋黃芋餅、雞肉飯</p>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$100-200/人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 Summary -->
+                    <div class="day-summary">
+                        <h4>💰 第二天預算總計</h4>
+                        <div class="budget-grid">
+                            <div class="budget-row">
+                                <span>🚇 交通</span>
+                                <span>NT$ 150-300/人</span>
+                            </div>
+                            <div class="budget-row">
+                                <span>🍜 餐飲</span>
+                                <span>NT$ 1,000-1,500/人</span>
+                            </div>
+                            <div class="budget-row">
+                                <span>🎫 門票</span>
+                                <span>NT$ 550-650/人</span>
+                            </div>
+                            <div class="budget-row total">
+                                <strong>總計</strong>
+                                <strong>NT$ 1,700-2,450/人</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3: 12月27日 -->
+                <div id="day3" class="day-section">
+                    <div class="day-header">
+                        <div class="day-number">Day 3</div>
+                        <div class="day-info">
+                            <h3 class="day-title">北投溫泉 + 老街探索 ♨️</h3>
+                            <p class="day-date">12月27日（五）</p>
+                        </div>
+                        <div class="day-budget-summary">
+                            <span class="budget-label">預算</span>
+                            <span class="budget-amount">NT$ 1,300-2,300/人</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <!-- Morning -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🏨</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-time">09:00 - 11:00</div>
+                                        <span class="activity-badge morning">上午</span>
+                                    </div>
+                                    <h4 class="activity-title">退房 & 前往北投</h4>
+                                    <div class="activity-details-inline">
+                                        <p>退房、整理行李，搭捷運至北投站轉新北投站</p>
+                                        <p class="note">💡 可先寄放行李於新酒店</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Morning Attractions -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">♨️</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card attraction">
+                                    <div class="activity-header">
+                                        <div class="activity-time">11:00 - 12:30</div>
+                                        <span class="activity-badge morning">上午</span>
+                                    </div>
+                                    <h4 class="activity-title">北投溫泉博物館 & 地熱谷</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <div class="attraction-item">
+                                            <h5>🏛️ 北投溫泉博物館</h5>
+                                            <p>日式建築、溫泉歷史（免費參觀）</p>
+                                            <p class="note">⚠️ 週一休館，需確認</p>
+                                        </div>
+                                        <div class="attraction-item">
+                                            <h5>♨️ 地熱谷</h5>
+                                            <p>溫泉源頭、硫磺煙霧、美麗如仙境（免費）</p>
+                                            <p class="warning">⚠️ 高溫蒸氣，保持距離</p>
+                                        </div>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 免費</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lunch -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🍜</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card meal">
+                                    <div class="activity-header">
+                                        <div class="activity-time">12:30 - 13:30</div>
+                                        <span class="activity-badge meal">午餐</span>
+                                    </div>
+                                    <h4 class="activity-title">北投市場美食</h4>
+                                    <div class="activity-details-inline">
+                                        <div class="food-grid">
+                                            <span class="food-tag">🍚 矮仔財滷肉飯 NT$50</span>
+                                            <span class="food-tag">🥟 高記茶莊包子 NT$35</span>
+                                            <span class="food-tag">🧋 蔡元益紅茶 NT$30</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$150-250/人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Afternoon -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🌊</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card attraction">
+                                    <div class="activity-header">
+                                        <div class="activity-time">14:00 - 18:30</div>
+                                        <span class="activity-badge afternoon">下午</span>
+                                    </div>
+                                    <h4 class="activity-title">淡水老街 + 漁人碼頭</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <p class="transport">🚇 捷運新北投站 → 紅線至淡水站（約40分鐘）</p>
+                                        <div class="attraction-item">
+                                            <h5>🏘️ 淡水老街（14:30-16:30）</h5>
+                                            <p>淡水阿給、魚丸湯、淡水鐵蛋（伴手禮）</p>
+                                        </div>
+                                        <div class="attraction-item">
+                                            <h5>🌅 漁人碼頭（16:30-18:30）</h5>
+                                            <p>情人橋夕陽（約17:00日落）、海邊散步、浪漫氛圍</p>
+                                            <p class="note">💡 Annie可坐著欣賞夕陽</p>
+                                        </div>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$200-400/人（小吃+伴手禮）</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dinner -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🦞</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card meal">
+                                    <div class="activity-header">
+                                        <div class="activity-time">18:30 - 20:00</div>
+                                        <span class="activity-badge meal">晚餐</span>
+                                    </div>
+                                    <h4 class="activity-title">漁人碼頭海鮮餐廳</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <p><strong>推薦：</strong>榕堤水灣餐廳</p>
+                                        <p><strong>特色：</strong>海景、新鮮海鮮</p>
+                                        <p><strong>必點：</strong>清蒸魚、炒蝦、炒螃蟹、海鮮粥</p>
+                                        <p class="warning">⚠️ 建議提前訂位</p>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$600-900/人</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Evening -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">♨️</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-time">20:30 - 22:00</div>
+                                        <span class="activity-badge evening">晚上</span>
+                                    </div>
+                                    <h4 class="activity-title">返回北投 & 溫泉體驗</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <p class="location">🏨 台北北投天玥泉會館 Check-in</p>
+                                        <p>享受房內或公共溫泉，放鬆身心</p>
+                                        <h5>溫泉使用建議：</h5>
+                                        <ul class="highlights">
+                                            <li>⏱️ 每次15-20分鐘</li>
+                                            <li>⚠️ 飯後1小時才可泡湯</li>
+                                            <li>🧴 準備毛巾、水</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 Summary -->
+                    <div class="day-summary">
+                        <h4>💰 第三天預算總計</h4>
+                        <div class="budget-grid">
+                            <div class="budget-row">
+                                <span>🚇 交通</span>
+                                <span>NT$ 150-250/人</span>
+                            </div>
+                            <div class="budget-row">
+                                <span>🍜 餐飲</span>
+                                <span>NT$ 950-1,550/人</span>
+                            </div>
+                            <div class="budget-row">
+                                <span>🛍️ 購物</span>
+                                <span>NT$ 200-500/人（伴手禮）</span>
+                            </div>
+                            <div class="budget-row total">
+                                <strong>總計</strong>
+                                <strong>NT$ 1,300-2,300/人</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4: 12月28日 -->
+                <div id="day4" class="day-section">
+                    <div class="day-header">
+                        <div class="day-number">Day 4</div>
+                        <div class="day-info">
+                            <h3 class="day-title">老街懷舊 + 返程 🛫</h3>
+                            <p class="day-date">12月28日（六）</p>
+                        </div>
+                        <div class="day-budget-summary">
+                            <span class="budget-label">預算</span>
+                            <span class="budget-amount">NT$ 1,000-1,770/人</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <!-- Morning -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🏮</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card attraction">
+                                    <div class="activity-header">
+                                        <div class="activity-time">09:00 - 13:00</div>
+                                        <span class="activity-badge morning">上午</span>
+                                    </div>
+                                    <h4 class="activity-title">九份老街</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <h5>🚗 前往方式：</h5>
+                                        <div class="option-box recommended">
+                                            <span class="option-badge">推薦</span>
+                                            <h5>包車（全日）</h5>
+                                            <p>NT$4,000-5,000（8人座）</p>
+                                            <p><strong>路線：</strong>北投 → 九份 → 直達機場</p>
+                                            <p><strong>優點：</strong>彈性、舒適、適合Annie</p>
+                                        </div>
+                                        
+                                        <h5>🎯 九份老街必做：</h5>
+                                        <ul class="highlights">
+                                            <li>🍡 阿柑姨芋圓 & 賴阿婆芋圓 NT$60</li>
+                                            <li>🍜 魚丸伯仔 NT$60</li>
+                                            <li>🍵 茶樓品茶（阿妹茶樓）NT$200-400/人</li>
+                                            <li>📸 拍攝千與千尋場景</li>
+                                            <li>🛍️ 購買鳳梨酥、牛軋糖伴手禮</li>
+                                        </ul>
+                                        
+                                        <h5>📍 參觀重點：</h5>
+                                        <ul class="highlights">
+                                            <li>豎崎路石階</li>
+                                            <li>海景觀景台</li>
+                                            <li>老街懷舊氛圍</li>
+                                        </ul>
+                                        
+                                        <p class="warning">⚠️ 九份多階梯，Annie需慢行或在茶樓休息</p>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$300-600/人（餐飲+茶樓+伴手禮）</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Afternoon -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"><span class="timeline-icon">🛫</span></div>
+                            <div class="timeline-content">
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-time">14:00 - 21:10</div>
+                                        <span class="activity-badge afternoon">下午至晚上</span>
+                                    </div>
+                                    <h4 class="activity-title">返回機場 & 返程</h4>
+                                    <button class="toggle-details" aria-expanded="false">
+                                        <span>查看詳情</span>
+                                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 16 16">
+                                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </button>
+                                    <div class="activity-details">
+                                        <h5>建議時程：</h5>
+                                        <div class="schedule-list">
+                                            <div class="schedule-item">
+                                                <span class="time">14:00</span>
+                                                <span class="desc">抵達桃園機場（九份出發約1.5小時）</span>
+                                            </div>
+                                            <div class="schedule-item">
+                                                <span class="time">14:00-17:00</span>
+                                                <span class="desc">機場免稅店購物、用餐</span>
+                                            </div>
+                                            <div class="schedule-item">
+                                                <span class="time">17:30</span>
+                                                <span class="desc">開始辦理登機手續</span>
+                                            </div>
+                                            <div class="schedule-item">
+                                                <span class="time">19:00</span>
+                                                <span class="desc">通過安檢、前往登機門</span>
+                                            </div>
+                                            <div class="schedule-item">
+                                                <span class="time">20:40</span>
+                                                <span class="desc">開始登機</span>
+                                            </div>
+                                            <div class="schedule-item">
+                                                <span class="time">21:10</span>
+                                                <span class="desc">✈️ 起飛返港</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <h5>🍜 機場美食推薦：</h5>
+                                        <div class="food-grid">
+                                            <span class="food-tag">🍜 牛肉麵 NT$200-300</span>
+                                            <span class="food-tag">🍚 滷肉飯 NT$80-120</span>
+                                            <span class="food-tag">🧋 珍珠奶茶 NT$60-80</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-footer">
+                                        <span class="budget-tag">💰 NT$500-650/人（包車）+ NT$200-400/人（機場餐飲）</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 4 Summary -->
+                    <div class="day-summary">
+                        <h4>💰 第四天預算總計</h4>
+                        <div class="budget-grid">
+                            <div class="budget-row">
+                                <span>🚗 交通（包車）</span>
+                                <span>NT$ 500-650/人</span>
+                            </div>
+                            <div class="budget-row">
+                                <span>🍜 餐飲</span>
+                                <span>NT$ 500-1,000/人</span>
+                            </div>
+                            <div class="budget-row total">
+                                <strong>總計</strong>
+                                <strong>NT$ 1,000-1,770/人</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="alternative">
+                            <h5>🗿 額外選項：</h5>
+                            <p><strong>野柳地質公園：</strong>如時間允許，可在九份後前往（門票 NT$120/人，參觀女王頭、蕈狀岩）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overall Trip Summary -->
+                <div class="trip-summary">
+                    <h3>🎯 四天總預算彙總</h3>
+                    <div class="summary-table">
+                        <div class="summary-row header">
+                            <span>項目</span>
+                            <span>Day 1</span>
+                            <span>Day 2</span>
+                            <span>Day 3</span>
+                            <span>Day 4</span>
+                            <span>總計</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>🚇 交通</span>
+                            <span>200-500</span>
+                            <span>150-300</span>
+                            <span>150-250</span>
+                            <span>500-650</span>
+                            <span><strong>1,000-1,700</strong></span>
+                        </div>
+                        <div class="summary-row">
+                            <span>🍜 餐飲</span>
+                            <span>700-1,100</span>
+                            <span>1,000-1,500</span>
+                            <span>950-1,550</span>
+                            <span>500-1,000</span>
+                            <span><strong>3,150-5,150</strong></span>
+                        </div>
+                        <div class="summary-row">
+                            <span>🎫 門票</span>
+                            <span>600</span>
+                            <span>550-650</span>
+                            <span>0</span>
+                            <span>0</span>
+                            <span><strong>1,150-1,250</strong></span>
+                        </div>
+                        <div class="summary-row">
+                            <span>🛍️ 購物</span>
+                            <span>700-1,500</span>
+                            <span>0</span>
+                            <span>200-500</span>
+                            <span>0</span>
+                            <span><strong>900-2,000</strong></span>
+                        </div>
+                        <div class="summary-row total">
+                            <span><strong>每人總計</strong></span>
+                            <span><strong>2,200-3,700</strong></span>
+                            <span><strong>1,700-2,450</strong></span>
+                            <span><strong>1,300-2,300</strong></span>
+                            <span><strong>1,000-1,770</strong></span>
+                            <span class="grand-total"><strong>NT$ 6,200-10,220</strong></span>
+                        </div>
+                    </div>
+                    
+                    <div class="accommodation-note">
+                        <h4>🏨 住宿預算（另計）：</h4>
+                        <p><strong>每人住宿預算：</strong>NT$ 4,500-6,500</p>
+                        <p><strong>🎯 最終人均預算：</strong><span class="final-budget">NT$ 10,700-16,720</span></p>
                     </div>
                 </div>
             </div>
