@@ -1,6 +1,6 @@
 /**
  * Taipei Christmas Travel Guide 2025
- * Map Integration JavaScript
+ * Map Integration JavaScript - Leaflet.js
  * Handles interactive maps for locations and attractions
  */
 
@@ -8,280 +8,309 @@
     'use strict';
 
     // ===================================
-    // Map Configuration
+    // Location Data for Each Day
     // ===================================
-    const MAP_CONFIG = {
-        // Taipei coordinates
-        center: {
-            lat: 25.0330,
-            lng: 121.5654
+    
+    // Day 1 Locations (12月25日)
+    const day1Locations = [
+        {
+            name: '台北101',
+            type: 'attraction',
+            icon: '🏙️',
+            coords: [25.0340, 121.5645],
+            description: '觀景台 + 購物中心',
+            googleMaps: 'https://goo.gl/maps/Taipei101'
         },
-        zoom: 12,
-        // Map styles (can be customized)
-        styles: []
-    };
-
-    // ===================================
-    // Location Data
-    // ===================================
-    const LOCATIONS = {
-        // Accommodations
-        hotels: [
-            {
-                id: 'hotel-1',
-                name: '台北見潭璞旅',
-                type: 'hotel',
-                coordinates: null, // To be filled when actual address is available
-                address: '需確認具體位置',
-                dates: '12月25-26日'
-            },
-            {
-                id: 'hotel-2',
-                name: '台北北投天玥泉會館',
-                type: 'hotel',
-                coordinates: { lat: 25.1373, lng: 121.5059 }, // Approximate Beitou coordinates
-                address: '台北市北投區',
-                dates: '12月27日',
-                special: '溫泉會館'
-            }
-        ],
-        
-        // Attractions (to be expanded in future steps)
-        attractions: [
-            {
-                id: 'taipei-101',
-                name: '台北101',
-                type: 'attraction',
-                coordinates: { lat: 25.0340, lng: 121.5645 },
-                address: '台北市信義區信義路五段7號',
-                day: 1
-            },
-            {
-                id: 'childrens-amusement-park',
-                name: '臺北市立兒童新樂園',
-                type: 'attraction',
-                coordinates: { lat: 25.0963, lng: 121.5156 },
-                address: '台北市士林區承德路五段55號',
-                day: 2,
-                highlight: '咖啡杯'
-            },
-            {
-                id: 'national-palace-museum',
-                name: '國立故宮博物院',
-                type: 'attraction',
-                coordinates: { lat: 25.1023, lng: 121.5485 },
-                address: '台北市士林區至善路二段221號',
-                day: 2
-            }
-        ],
-        
-        // Night Markets (to be expanded)
-        nightMarkets: [
-            {
-                id: 'raohe-night-market',
-                name: '饒河街夜市',
-                type: 'food',
-                coordinates: { lat: 25.0509, lng: 121.5778 },
-                address: '台北市松山區饒河街',
-                day: 1
-            },
-            {
-                id: 'shilin-night-market',
-                name: '士林夜市',
-                type: 'food',
-                coordinates: { lat: 25.0878, lng: 121.5241 },
-                address: '台北市士林區',
-                day: 2
-            }
-        ]
-    };
-
-    // ===================================
-    // Initialize Map (Google Maps placeholder)
-    // ===================================
-    function initMap() {
-        // This is a placeholder function
-        // Actual Google Maps integration will be implemented in future steps
-        // For now, we'll just log that the map module is ready
-        
-        console.log('Map module initialized');
-        console.log('Total locations:', getAllLocations().length);
-        
-        // Check if Google Maps API is loaded
-        if (typeof google !== 'undefined' && google.maps) {
-            console.log('Google Maps API is available');
-            createMap();
-        } else {
-            console.log('Google Maps API not loaded - map features will be added in future steps');
+        {
+            name: '鼎泰豐（信義店）',
+            type: 'food',
+            icon: '🥟',
+            coords: [25.0339, 121.5645],
+            description: '必吃小籠包',
+            googleMaps: 'https://goo.gl/maps/DinTaiFung'
+        },
+        {
+            name: '饒河街夜市',
+            type: 'food',
+            icon: '🍜',
+            coords: [25.0511, 121.5775],
+            description: '必吃：胡椒餅、藥燉排骨',
+            googleMaps: 'https://goo.gl/maps/RaoheNightMarket'
+        },
+        {
+            name: '西門町',
+            type: 'attraction',
+            icon: '🛍️',
+            coords: [25.0421, 121.5071],
+            description: '聖誕氛圍 + 動漫周邊',
+            googleMaps: 'https://goo.gl/maps/Ximending'
+        },
+        {
+            name: '台北見潭璞旅',
+            type: 'hotel',
+            icon: '🏨',
+            coords: [25.0330, 121.5654],
+            description: '住宿酒店（12/25-26）',
+            googleMaps: 'https://goo.gl/maps/TaipeiHotel'
         }
+    ];
+
+    // Day 2 Locations (12月26日)
+    const day2Locations = [
+        {
+            name: '臺北市立兒童新樂園',
+            type: 'attraction',
+            icon: '🎡',
+            coords: [25.0968, 121.5156],
+            description: '必玩咖啡杯！',
+            googleMaps: 'https://goo.gl/maps/ChildrensAmusementPark'
+        },
+        {
+            name: '士林夜市',
+            type: 'food',
+            icon: '🍗',
+            coords: [25.0881, 121.5240],
+            description: '大餅包小餅、豪大雞排',
+            googleMaps: 'https://goo.gl/maps/ShilinNightMarket'
+        },
+        {
+            name: '國立故宮博物院',
+            type: 'attraction',
+            icon: '🏛️',
+            coords: [25.1024, 121.5484],
+            description: '翠玉白菜、肉形石',
+            googleMaps: 'https://goo.gl/maps/NationalPalaceMuseum'
+        },
+        {
+            name: '欣葉台菜（中山店）',
+            type: 'food',
+            icon: '🍽️',
+            coords: [25.0625, 121.5243],
+            description: '經典台菜晚餐',
+            googleMaps: 'https://goo.gl/maps/ShinYeh'
+        },
+        {
+            name: '寧夏夜市',
+            type: 'food',
+            icon: '🍜',
+            coords: [25.0565, 121.5154],
+            description: '傳統台灣小吃',
+            googleMaps: 'https://goo.gl/maps/NingxiaNightMarket'
+        }
+    ];
+
+    // Day 3 Locations (12月27日)
+    const day3Locations = [
+        {
+            name: '北投溫泉博物館',
+            type: 'attraction',
+            icon: '🏛️',
+            coords: [25.1367, 121.5084],
+            description: '日式建築、溫泉歷史',
+            googleMaps: 'https://goo.gl/maps/BeitouMuseum'
+        },
+        {
+            name: '地熱谷',
+            type: 'attraction',
+            icon: '♨️',
+            coords: [25.1373, 121.5116],
+            description: '溫泉源頭、硫磺煙霧',
+            googleMaps: 'https://goo.gl/maps/GeothermalValley'
+        },
+        {
+            name: '淡水老街',
+            type: 'attraction',
+            icon: '🏮',
+            coords: [25.1688, 121.4458],
+            description: '淡水阿給、魚丸湯',
+            googleMaps: 'https://goo.gl/maps/TamsuiOldStreet'
+        },
+        {
+            name: '漁人碼頭',
+            type: 'attraction',
+            icon: '🌅',
+            coords: [25.1820, 121.4172],
+            description: '情人橋、夕陽海景',
+            googleMaps: 'https://goo.gl/maps/FishermansWharf'
+        },
+        {
+            name: '北投天玥泉會館',
+            type: 'hotel',
+            icon: '♨️',
+            coords: [25.1373, 121.5059],
+            description: '溫泉酒店（12/27）',
+            googleMaps: 'https://goo.gl/maps/BeitouHotel'
+        }
+    ];
+
+    // Day 4 Locations (12月28日)
+    const day4Locations = [
+        {
+            name: '九份老街',
+            type: 'attraction',
+            icon: '🏮',
+            coords: [25.1094, 121.8449],
+            description: '千與千尋場景、芋圓',
+            googleMaps: 'https://goo.gl/maps/Jiufen'
+        },
+        {
+            name: '桃園國際機場',
+            type: 'transport',
+            icon: '✈️',
+            coords: [25.0777, 121.2328],
+            description: '21:10 起飛返港',
+            googleMaps: 'https://goo.gl/maps/TPEAirport'
+        }
+    ];
+
+    // ===================================
+    // Map Initialization Functions
+    // ===================================
+    
+    function createCustomIcon(emoji, type) {
+        const iconHtml = `
+            <div class="custom-marker ${type}-marker">
+                ${emoji}
+            </div>
+        `;
+        
+        return L.divIcon({
+            html: iconHtml,
+            className: 'custom-div-icon',
+            iconSize: [36, 36],
+            iconAnchor: [18, 18],
+            popupAnchor: [0, -18]
+        });
+    }
+
+    function createPopupContent(location) {
+        const typeLabels = {
+            hotel: '住宿',
+            attraction: '景點',
+            food: '美食',
+            transport: '交通'
+        };
+        
+        return `
+            <div class="map-popup">
+                <h5>${location.icon} ${location.name}</h5>
+                <span class="popup-type ${location.type}">${typeLabels[location.type]}</span>
+                <p class="popup-description">${location.description}</p>
+                <a href="${location.googleMaps}" target="_blank" rel="noopener noreferrer" class="popup-link">
+                    📍 在 Google 地圖中查看
+                </a>
+            </div>
+        `;
+    }
+
+    function initializeMap(mapId, locations) {
+        // Check if map container exists
+        const mapContainer = document.getElementById(mapId);
+        if (!mapContainer) {
+            console.warn(`Map container ${mapId} not found`);
+            return null;
+        }
+
+        // Calculate center based on locations
+        let centerLat = 0;
+        let centerLng = 0;
+        locations.forEach(loc => {
+            centerLat += loc.coords[0];
+            centerLng += loc.coords[1];
+        });
+        centerLat /= locations.length;
+        centerLng /= locations.length;
+
+        // Initialize map
+        const map = L.map(mapId).setView([centerLat, centerLng], 12);
+
+        // Add tile layer (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 18
+        }).addTo(map);
+
+        // Add markers for each location
+        const markers = [];
+        locations.forEach(location => {
+            const icon = createCustomIcon(location.icon, location.type);
+            const marker = L.marker(location.coords, { icon: icon })
+                .addTo(map)
+                .bindPopup(createPopupContent(location));
+            
+            markers.push(marker);
+        });
+
+        // Fit bounds to show all markers
+        if (markers.length > 0) {
+            const group = L.featureGroup(markers);
+            map.fitBounds(group.getBounds().pad(0.1));
+        }
+
+        return map;
     }
 
     // ===================================
-    // Create Map Instance
+    // Initialize All Maps
     // ===================================
-    function createMap() {
-        const mapContainer = document.getElementById('map');
-        
-        if (!mapContainer) {
-            console.log('Map container not found');
+    
+    function initializeMaps() {
+        // Wait for Leaflet to be loaded
+        if (typeof L === 'undefined') {
+            console.error('Leaflet library not loaded');
             return;
         }
 
-        // Create map instance
-        const map = new google.maps.Map(mapContainer, {
-            center: MAP_CONFIG.center,
-            zoom: MAP_CONFIG.zoom,
-            styles: MAP_CONFIG.styles
-        });
-
-        // Add markers for all locations
-        addMarkers(map);
-    }
-
-    // ===================================
-    // Add Markers to Map
-    // ===================================
-    function addMarkers(map) {
-        const allLocations = getAllLocations();
-        
-        allLocations.forEach(location => {
-            if (!location.coordinates) return;
-
-            const marker = new google.maps.Marker({
-                position: location.coordinates,
-                map: map,
-                title: location.name,
-                icon: getMarkerIcon(location.type)
-            });
-
-            // Add info window
-            const infoWindow = new google.maps.InfoWindow({
-                content: createInfoWindowContent(location)
-            });
-
-            marker.addListener('click', function() {
-                infoWindow.open(map, marker);
-            });
-        });
-    }
-
-    // ===================================
-    // Get Marker Icon Based on Type
-    // ===================================
-    function getMarkerIcon(type) {
-        const icons = {
-            hotel: {
-                url: 'images/icons/hotel-marker.png',
-                scaledSize: new google.maps.Size(32, 32)
-            },
-            attraction: {
-                url: 'images/icons/attraction-marker.png',
-                scaledSize: new google.maps.Size(32, 32)
-            },
-            food: {
-                url: 'images/icons/food-marker.png',
-                scaledSize: new google.maps.Size(32, 32)
-            }
-        };
-
-        return icons[type] || null;
-    }
-
-    // ===================================
-    // Create Info Window Content
-    // ===================================
-    function createInfoWindowContent(location) {
-        let content = `
-            <div class="map-info-window">
-                <h3>${location.name}</h3>
-                <p><strong>地址:</strong> ${location.address}</p>
-        `;
-
-        if (location.dates) {
-            content += `<p><strong>日期:</strong> ${location.dates}</p>`;
+        // Initialize maps for each day
+        try {
+            initializeMap('map-day1', day1Locations);
+            initializeMap('map-day2', day2Locations);
+            initializeMap('map-day3', day3Locations);
+            initializeMap('map-day4', day4Locations);
+            
+            console.log('All maps initialized successfully');
+        } catch (error) {
+            console.error('Error initializing maps:', error);
         }
-
-        if (location.day) {
-            content += `<p><strong>Day ${location.day}</strong></p>`;
-        }
-
-        if (location.special) {
-            content += `<p><strong>特色:</strong> ${location.special}</p>`;
-        }
-
-        if (location.highlight) {
-            content += `<p><strong>亮點:</strong> ${location.highlight}</p>`;
-        }
-
-        content += `</div>`;
-
-        return content;
     }
 
     // ===================================
-    // Get All Locations
+    // Event Listeners
     // ===================================
-    function getAllLocations() {
-        return [
-            ...LOCATIONS.hotels,
-            ...LOCATIONS.attractions,
-            ...LOCATIONS.nightMarkets
-        ];
-    }
-
-    // ===================================
-    // Get Locations by Day
-    // ===================================
-    function getLocationsByDay(day) {
-        return getAllLocations().filter(location => location.day === day);
-    }
-
-    // ===================================
-    // Get Locations by Type
-    // ===================================
-    function getLocationsByType(type) {
-        return getAllLocations().filter(location => location.type === type);
-    }
-
-    // ===================================
-    // Calculate Distance Between Two Points
-    // ===================================
-    function calculateDistance(lat1, lng1, lat2, lng2) {
-        // Haversine formula
-        const R = 6371; // Radius of the Earth in km
-        const dLat = deg2rad(lat2 - lat1);
-        const dLng = deg2rad(lng2 - lng1);
-        const a =
-            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-            Math.sin(dLng / 2) * Math.sin(dLng / 2);
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        const distance = R * c; // Distance in km
-        return distance;
-    }
-
-    function deg2rad(deg) {
-        return deg * (Math.PI / 180);
-    }
-
-    // ===================================
-    // Export Functions for Global Access
-    // ===================================
-    window.TaipeiTravelMap = {
-        init: initMap,
-        getLocations: getAllLocations,
-        getLocationsByDay: getLocationsByDay,
-        getLocationsByType: getLocationsByType,
-        calculateDistance: calculateDistance
-    };
-
-    // ===================================
-    // Auto-initialize if map container exists
-    // ===================================
+    
+    // Initialize maps when DOM is ready and Leaflet is loaded
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initMap);
+        document.addEventListener('DOMContentLoaded', function() {
+            // Small delay to ensure Leaflet is fully loaded
+            setTimeout(initializeMaps, 100);
+        });
     } else {
-        initMap();
+        setTimeout(initializeMaps, 100);
     }
+
+    // Re-initialize maps when day sections become visible
+    // (in case they're in tabs/accordions)
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                const target = mutation.target;
+                if (target.style.display !== 'none' && target.classList.contains('day-section')) {
+                    // Map container became visible, invalidate size
+                    const mapId = target.querySelector('.map-container')?.id;
+                    if (mapId && window[mapId + '_instance']) {
+                        window[mapId + '_instance'].invalidateSize();
+                    }
+                }
+            }
+        });
+    });
+
+    // Observe day sections for visibility changes
+    document.addEventListener('DOMContentLoaded', function() {
+        const daySections = document.querySelectorAll('.day-section');
+        daySections.forEach(section => {
+            observer.observe(section, { attributes: true });
+        });
+    });
 
 })();

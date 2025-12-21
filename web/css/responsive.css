@@ -473,10 +473,28 @@
     .trip-summary h3 {
         font-size: var(--font-size-xl);
     }
+    
+    /* Map responsive adjustments */
+    .map-section {
+        padding: var(--spacing-md);
+    }
+    
+    .map-container {
+        height: 300px; /* Smaller height on mobile */
+    }
+    
+    .map-title {
+        font-size: var(--font-size-lg);
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     .summary-row {
         font-size: var(--font-size-sm);
+    }
+    
+    /* Map adjustments for tablet */
+    .map-container {
+        height: 350px;
     }
 }
