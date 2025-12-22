@@ -1,0 +1,33 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="192" height="192" fill="#c41e3a" rx="32"/>
+  
+  <!-- Christmas Tree -->
+  <path d="M96 45 L120 75 L115 75 L135 100 L130 100 L150 130 L42 130 L62 100 L57 100 L77 75 L72 75 Z" fill="#2ecc71"/>
+  
+  <!-- Tree Star -->
+  <path d="M96 30 L99 40 L109 40 L101 47 L104 57 L96 50 L88 57 L91 47 L83 40 L93 40 Z" fill="#f1c40f"/>
+  
+  <!-- Tree Ornaments -->
+  <circle cx="85" cy="90" r="4" fill="#e74c3c"/>
+  <circle cx="107" cy="90" r="4" fill="#f1c40f"/>
+  <circle cx="75" cy="110" r="4" fill="#3498db"/>
+  <circle cx="96" cy="105" r="4" fill="#e74c3c"/>
+  <circle cx="117" cy="110" r="4" fill="#f1c40f"/>
+  <circle cx="65" cy="125" r="4" fill="#3498db"/>
+  <circle cx="127" cy="125" r="4" fill="#e74c3c"/>
+  
+  <!-- Taipei 101 Silhouette -->
+  <rect x="140" y="100" width="30" height="60" fill="rgba(255,255,255,0.3)"/>
+  <rect x="145" y="95" width="20" height="5" fill="rgba(255,255,255,0.3)"/>
+  <rect x="147" y="90" width="16" height="5" fill="rgba(255,255,255,0.3)"/>
+  <rect x="149" y="85" width="12" height="5" fill="rgba(255,255,255,0.3)"/>
+  <rect x="151" y="80" width="8" height="5" fill="rgba(255,255,255,0.3)"/>
+  <path d="M153 75 L157 75 L157 80 L153 80 Z" fill="rgba(255,255,255,0.3)"/>
+  
+  <!-- Year Text -->
+  <text x="96" y="175" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">2025</text>
+  
+  <!-- Taipei Text -->
+  <text x="96" y="155" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="rgba(255,255,255,0.9)" text-anchor="middle">台北</text>
+</svg>
