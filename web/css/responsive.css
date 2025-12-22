@@ -662,3 +662,83 @@
         height: 32px;
     }
 }
+
+/* ========================================
+   Gallery & Lightbox - Mobile
+   ======================================== */
+
+@media (max-width: 767px) {
+    .gallery-section {
+        padding: 1.5rem;
+    }
+    
+    .gallery-title {
+        font-size: 1.1rem;
+    }
+    
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .placeholder-icon {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-placeholder p {
+        font-size: 0.8rem;
+    }
+    
+    .lightbox-content {
+        width: 95%;
+        height: 95%;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .lightbox-nav.prev {
+        left: 10px;
+    }
+    
+    .lightbox-nav.next {
+        right: 10px;
+    }
+    
+    .lightbox-counter {
+        top: 10px;
+        right: 60px;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .lightbox-caption {
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .lightbox-image {
+        max-height: 70vh;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .image-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .image-gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
