@@ -2358,3 +2358,388 @@ strong {
     color: var(--color-secondary);
     font-weight: 700;
 }
+
+/* ========================================
+   Important Information Section Styles
+   ======================================== */
+
+/* Info Section Base */
+.info-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.info-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-icon {
+    font-size: 1.8rem;
+}
+
+/* Checklist Styles */
+.checklist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.checklist-column h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+}
+
+.checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checklist-item:hover {
+    background-color: #f8f9fa;
+}
+
+.checklist-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+.checklist-checkbox:checked + .checklist-label {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.checklist-label {
+    flex: 1;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+/* Checklist Actions */
+.checklist-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.checklist-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--primary), #a01729);
+    color: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px rgba(196, 30, 58, 0.2);
+}
+
+.checklist-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(196, 30, 58, 0.3);
+}
+
+.checklist-btn.secondary {
+    background: linear-gradient(135deg, #6c757d, #545b62);
+    box-shadow: 0 2px 4px rgba(108, 117, 125, 0.2);
+}
+
+.checklist-btn.secondary:hover {
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+/* Alert Section (Annie's Special Considerations) */
+.alert-section {
+    border-left: 4px solid #ff6b6b;
+    background: linear-gradient(to right, #fff5f5, white);
+}
+
+.alert-content {
+    margin-top: 1rem;
+}
+
+.alert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.alert-item h4 {
+    color: #d63031;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.alert-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.alert-item ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.alert-item ul li::before {
+    content: "⚠️";
+    position: absolute;
+    left: 0;
+}
+
+.alert-item ul li strong {
+    color: var(--primary);
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    text-align: left;
+    transition: all 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #f8f9fa;
+    color: var(--primary);
+}
+
+.faq-question[aria-expanded="true"] {
+    background-color: #fff5f5;
+    color: var(--primary);
+}
+
+.faq-icon {
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #fafafa;
+}
+
+.faq-question[aria-expanded="true"] + .faq-answer {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+}
+
+.faq-answer p,
+.faq-answer ul,
+.faq-answer ol {
+    padding: 0 1.5rem;
+    margin: 1rem 0;
+}
+
+.faq-answer ul,
+.faq-answer ol {
+    padding-left: 3rem;
+}
+
+.faq-answer p:last-child {
+    padding-bottom: 1.25rem;
+}
+
+/* Food Checklist in FAQ */
+.food-checklist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+}
+
+.food-item {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), #a01729);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Warning Section (Booking Reminders) */
+.warning-section {
+    border-left: 4px solid #ffa500;
+    background: linear-gradient(to right, #fff9e6, white);
+}
+
+.warning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.warning-card {
+    background: white;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(255, 165, 0, 0.1);
+}
+
+.warning-card h4 {
+    color: #ff8c00;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.warning-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.warning-card ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.warning-card ul li::before {
+    content: "📌";
+    position: absolute;
+    left: 0;
+}
+
+.warning-text {
+    color: #d63031;
+    font-weight: 600;
+    padding: 0.75rem;
+    background: #fff5f5;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+}
+
+/* Emergency Section */
+.emergency-section {
+    border-left: 4px solid #d63031;
+    background: linear-gradient(to right, #fff0f0, white);
+}
+
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.emergency-card {
+    background: white;
+    border: 2px solid #ffcccb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(214, 48, 49, 0.1);
+}
+
+.emergency-card.priority {
+    border-color: #d63031;
+    background: linear-gradient(135deg, #fff5f5, white);
+}
+
+.emergency-card h4 {
+    color: #d63031;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.contact-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: #a01729;
+    text-decoration: underline;
+}
+
+/* Print Styles for Checklist */
+@media print {
+    .checklist-actions {
+        display: none;
+    }
+    
+    .info-section {
+        page-break-inside: avoid;
+    }
+    
+    .faq-answer {
+        max-height: none !important;
+    }
+}

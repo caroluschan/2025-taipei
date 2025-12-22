@@ -396,3 +396,165 @@
     }
 
 })();
+
+// ===================================
+// FAQ Accordion Functionality
+// ===================================
+function initFAQAccordion() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other FAQ items
+            faqQuestions.forEach(q => {
+                if (q !== this) {
+                    q.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Toggle current item
+            this.setAttribute('aria-expanded', !isExpanded);
+        });
+    });
+}
+
+// ===================================
+// Checklist Functionality with LocalStorage
+// ===================================
+function initChecklist() {
+    const checkboxes = document.querySelectorAll('.checklist-checkbox');
+    const saveBtn = document.getElementById('save-checklist');
+    const resetBtn = document.getElementById('reset-checklist');
+    const printBtn = document.getElementById('print-checklist');
+    
+    // Load saved state from localStorage
+    function loadChecklistState() {
+        checkboxes.forEach(checkbox => {
+            const savedState = localStorage.getItem(`checklist-${checkbox.id}`);
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            }
+        });
+    }
+    
+    // Save state to localStorage
+    function saveChecklistState() {
+        checkboxes.forEach(checkbox => {
+            localStorage.setItem(`checklist-${checkbox.id}`, checkbox.checked);
+        });
+        
+        // Show confirmation
+        showNotification('✅ 清單已儲存！');
+    }
+    
+    // Reset all checkboxes
+    function resetChecklist() {
+        if (confirm('確定要重設所有清單項目嗎？')) {
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+                localStorage.removeItem(`checklist-${checkbox.id}`);
+            });
+            showNotification('🔄 清單已重設');
+        }
+    }
+    
+    // Print checklist
+    function printChecklist() {
+        // Expand all FAQ items for printing
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(q => q.setAttribute('aria-expanded', 'true'));
+        
+        // Trigger print
+        setTimeout(() => {
+            window.print();
+            
+            // Collapse FAQ items after printing
+            setTimeout(() => {
+                faqQuestions.forEach(q => q.setAttribute('aria-expanded', 'false'));
+            }, 100);
+        }, 100);
+    }
+    
+    // Show notification
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'checklist-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary), #a01729);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 10000;
+            animation: slideIn 0.3s ease-out;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease-out';
+            setTimeout(() => notification.remove(), 300);
+        }, 2000);
+    }
+    
+    // Add CSS animation
+    if (!document.getElementById('checklist-notification-styles')) {
+        const style = document.createElement('style');
+        style.id = 'checklist-notification-styles';
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Event listeners
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', saveChecklistState);
+    });
+    
+    if (saveBtn) saveBtn.addEventListener('click', saveChecklistState);
+    if (resetBtn) resetBtn.addEventListener('click', resetChecklist);
+    if (printBtn) printBtn.addEventListener('click', printChecklist);
+    
+    // Load saved state on page load
+    loadChecklistState();
+}
+
+// ===================================
+// Initialize Important Information Features
+// ===================================
+function initImportantInfo() {
+    initFAQAccordion();
+    initChecklist();
+}
+
+// Add to main initialization
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing initialization code ...
+    initImportantInfo();
+});

@@ -1658,10 +1658,13 @@
             </div>
         </section>
 
-        <!-- Tips Section (Placeholder) -->
+        <!-- Important Information Section -->
         <section id="tips" class="section section-alt">
             <div class="container">
-                <h2 class="section-title">實用資訊</h2>
+                <h2 class="section-title">📋 重要資訊與提醒</h2>
+                <p class="section-intro">行前必讀資訊，確保旅程順利無憂</p>
+                
+                <!-- Quick Info Cards -->
                 <div class="tips-grid">
                     <div class="tip-card">
                         <div class="card-icon">🌤️</div>
@@ -1686,6 +1689,335 @@
                         <h3>通訊</h3>
                         <p>建議購買旅遊SIM卡</p>
                         <p class="text-muted">機場或便利商店可購買</p>
+                    </div>
+                </div>
+
+                <!-- Pre-Trip Checklist -->
+                <div class="info-section">
+                    <h3 class="info-title">
+                        <span class="info-icon">✅</span>
+                        行前準備清單
+                    </h3>
+                    <div class="checklist-container">
+                        <div class="checklist-column">
+                            <h4>必備證件</h4>
+                            <div class="checklist">
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-permit">
+                                    <span class="checklist-label">台灣通行證（港澳居民）</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-tickets">
+                                    <span class="checklist-label">來回機票</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-hotel">
+                                    <span class="checklist-label">酒店確認單</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-insurance">
+                                    <span class="checklist-label">旅遊保險</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-column">
+                            <h4>必備物品</h4>
+                            <div class="checklist">
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-adapter">
+                                    <span class="checklist-label">轉接插頭（110V，兩腳扁型）</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-umbrella">
+                                    <span class="checklist-label">雨具（折疊傘或雨衣）</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-jacket">
+                                    <span class="checklist-label">防水外套 + 保暖衣物</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-shoes">
+                                    <span class="checklist-label">舒適步行鞋</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-swimsuit">
+                                    <span class="checklist-label">泳衣（泡溫泉用）</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-medicine">
+                                    <span class="checklist-label">常用藥品</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-column">
+                            <h4>手機應用程式</h4>
+                            <div class="checklist">
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-maps">
+                                    <span class="checklist-label">Google Maps</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-mrt">
+                                    <span class="checklist-label">台北捷運Go</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-uber">
+                                    <span class="checklist-label">Uber / 台灣大車隊</span>
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox" class="checklist-checkbox" id="check-klook">
+                                    <span class="checklist-label">KLOOK / KKday</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-actions">
+                        <button id="save-checklist" class="checklist-btn">💾 儲存進度</button>
+                        <button id="reset-checklist" class="checklist-btn secondary">🔄 重設清單</button>
+                        <button id="print-checklist" class="checklist-btn">🖨️ 列印清單</button>
+                    </div>
+                </div>
+
+                <!-- Annie Special Considerations -->
+                <div class="info-section alert-section">
+                    <h3 class="info-title">
+                        <span class="info-icon">🏥</span>
+                        Annie 特別注意事項（腿傷）
+                    </h3>
+                    <div class="alert-content">
+                        <div class="alert-grid">
+                            <div class="alert-item">
+                                <h4>行程調整建議</h4>
+                                <ul>
+                                    <li><strong>Day 1：</strong>台北101可搭電梯，信義區商場平坦</li>
+                                    <li><strong>Day 2：</strong>兒童新樂園選擇溫和設施，故宮有電梯</li>
+                                    <li><strong>Day 3：</strong>淡水漁人碼頭可坐觀景、地熱谷不需長行</li>
+                                    <li><strong>Day 4：</strong>九份多階梯，可在茶樓休息，建議包車</li>
+                                </ul>
+                            </div>
+                            <div class="alert-item">
+                                <h4>準備物品</h4>
+                                <ul>
+                                    <li>彈性繃帶</li>
+                                    <li>止痛藥</li>
+                                    <li>輪椅（如需要，可在機場/景點租借）</li>
+                                </ul>
+                                <h4>活動彈性</h4>
+                                <ul>
+                                    <li>如感到不適，可在咖啡廳休息</li>
+                                    <li>其他成員可自由活動</li>
+                                    <li>夥伴輪流陪伴</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Accordion -->
+                <div class="info-section">
+                    <h3 class="info-title">
+                        <span class="info-icon">❓</span>
+                        常見問題 FAQ
+                    </h3>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>需要準備多少現金？</span>
+                                <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>建議每人準備 <strong>NT$10,000-15,000</strong> 現金。台北大部分地方可用信用卡，但夜市、小店需要現金支付。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>天氣不好怎麼辦？</span>
+                                <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p><strong>下雨天替代行程：</strong></p>
+                                <ul>
+                                    <li>誠品書店（信義店或敦南店）</li>
+                                    <li>松菸文創園區</li>
+                                    <li>華山1914文創園區</li>
+                                    <li>購物商場：微風廣場、SOGO</li>
+                                    <li>室內博物館：故宮、歷史博物館</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>有什麼省錢小貼士？</span>
+                                <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p><strong>💰 省錢秘訣：</strong></p>
+                                <ul>
+                                    <li><strong>悠遊卡：</strong>搭乘捷運有折扣</li>
+                                    <li><strong>信用卡優惠：</strong>部分餐廳、景點有折扣</li>
+                                    <li><strong>夜市美食：</strong>比餐廳便宜且道地</li>
+                                    <li><strong>免費景點：</strong>地熱谷、北投圖書館、溫泉博物館</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>推薦什麼伴手禮？</span>
+                                <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p><strong>🎁 熱門伴手禮：</strong></p>
+                                <ol>
+                                    <li><strong>鳳梨酥：</strong>微熱山丘、佳德糕餅</li>
+                                    <li><strong>牛軋糖：</strong>糖村</li>
+                                    <li><strong>茶葉：</strong>天仁茗茶</li>
+                                    <li><strong>太陽餅：</strong>台中特產（台北也有）</li>
+                                    <li><strong>麻糬：</strong>曾記麻糬（花蓮名產）</li>
+                                    <li><strong>面膜：</strong>我的美麗日記</li>
+                                </ol>
+                                <p><strong>購買地點：</strong>台北101地下街、機場免稅店、九份老街、各大百貨公司</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>適合動漫愛好者的景點？</span>
+                                <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p><strong>🎮 適合 Charles & Kris（動漫愛好者）：</strong></p>
+                                <p><strong>西門町：</strong></p>
+                                <ul>
+                                    <li>萬年商業大樓（動漫周邊）</li>
+                                    <li>ANIMATE台北店</li>
+                                    <li>女僕咖啡廳</li>
+                                </ul>
+                                <p><strong>其他景點：</strong></p>
+                                <ul>
+                                    <li>光華商場（電腦、遊戲、動漫周邊）</li>
+                                    <li>東區地下街（動漫、扭蛋）</li>
+                                </ul>
+                                <p class="text-muted">可納入 Day 1 或 Day 2 晚上行程</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>必吃美食清單？</span>
+                                <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p><strong>🍜 必吃清單（已包含在行程）：</strong></p>
+                                <div class="food-checklist">
+                                    <span class="food-item">✅ 鼎泰豐小籠包</span>
+                                    <span class="food-item">✅ 牛肉麵</span>
+                                    <span class="food-item">✅ 滷肉飯</span>
+                                    <span class="food-item">✅ 蚵仔煎</span>
+                                    <span class="food-item">✅ 胡椒餅</span>
+                                    <span class="food-item">✅ 珍珠奶茶</span>
+                                    <span class="food-item">✅ 芋圓</span>
+                                    <span class="food-item">✅ 鳳梨酥</span>
+                                    <span class="food-item">✅ 夜市小吃</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Reminders -->
+                <div class="info-section warning-section">
+                    <h3 class="info-title">
+                        <span class="info-icon">⚠️</span>
+                        立即預訂提醒
+                    </h3>
+                    <div class="warning-grid">
+                        <div class="warning-card">
+                            <h4>🍽️ 餐廳預訂</h4>
+                            <ul>
+                                <li>鼎泰豐（Day 1午餐）- 可現場排隊但需等候</li>
+                                <li>欣葉台菜/青葉台菜（Day 2晚餐）- 建議電話預訂</li>
+                                <li>漁人碼頭海鮮餐廳（Day 3晚餐）- 建議電話預訂</li>
+                            </ul>
+                        </div>
+                        <div class="warning-card">
+                            <h4>🏨 住宿確認</h4>
+                            <p class="warning-text">⚠️ <strong>緊急！</strong>立即確認兩間酒店訂房狀況</p>
+                            <p><strong>備選酒店：</strong></p>
+                            <ul>
+                                <li>福華大飯店</li>
+                                <li>君品酒店</li>
+                                <li>台北W飯店</li>
+                            </ul>
+                        </div>
+                        <div class="warning-card">
+                            <h4>🚗 交通預訂</h4>
+                            <ul>
+                                <li>Day 4 包車（建議提前預訂）</li>
+                                <li>機場接送（如選擇包車）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Contacts -->
+                <div class="info-section emergency-section">
+                    <h3 class="info-title">
+                        <span class="info-icon">🆘</span>
+                        緊急聯絡資訊
+                    </h3>
+                    <div class="emergency-grid">
+                        <div class="emergency-card priority">
+                            <h4>緊急服務</h4>
+                            <div class="contact-item">
+                                <span class="contact-label">警察局：</span>
+                                <a href="tel:110" class="contact-link">110</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">消防/救護車：</span>
+                                <a href="tel:119" class="contact-link">119</a>
+                            </div>
+                        </div>
+                        
+                        <div class="emergency-card">
+                            <h4>醫院</h4>
+                            <div class="contact-item">
+                                <span class="contact-label">台大醫院：</span>
+                                <a href="tel:+886-2-2312-3456" class="contact-link">02-2312-3456</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">國泰綜合醫院：</span>
+                                <a href="tel:+886-2-2708-2121" class="contact-link">02-2708-2121</a>
+                            </div>
+                        </div>
+                        
+                        <div class="emergency-card">
+                            <h4>香港辦事處</h4>
+                            <div class="contact-item">
+                                <span class="contact-label">香港經濟貿易文化辦事處：</span>
+                                <a href="tel:+886-2-2525-8316" class="contact-link">02-2525-8316</a>
+                            </div>
+                            <p class="text-muted" style="margin-top: 8px; font-size: 0.9rem;">
+                                地址：台北市松山區松高路9-11號26樓
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
