@@ -3488,3 +3488,96 @@ html {
         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1200 - 320)));
     }
 }
+
+/* ========================================
+   Accessibility Enhancements
+   ======================================== */
+
+/* Skip to Main Content Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    text-decoration: none;
+    z-index: 10001;
+    font-weight: 600;
+    border-radius: 0 0 var(--border-radius-md) 0;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--color-gold);
+    outline-offset: 2px;
+}
+
+/* Visually Hidden (Screen Reader Only) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus Visible Styles for Better Keyboard Navigation */
+*:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 3px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .btn,
+    button,
+    a {
+        border: 2px solid currentColor;
+    }
+    
+    .card,
+    .overview-card,
+    .member-card {
+        border: 3px solid var(--color-gray-900);
+    }
+}
+
+/* Ensure all interactive elements have visible focus */
+input:focus,
+select:focus,
+textarea:focus,
+.toggle-details:focus,
+.faq-question:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* ARIA Live Region Styling */
+[aria-live="polite"],
+[aria-live="assertive"] {
+    position: relative;
+}
+
+/* Improved Focus Indicator for Emergency FAB */
+.emergency-fab:focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 4px;
+}
+
+/* Ensure decorative elements are properly hidden from assistive tech */
+[aria-hidden="true"] {
+    pointer-events: none;
+}
