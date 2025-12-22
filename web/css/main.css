@@ -3344,3 +3344,147 @@ strong {
 @keyframes spin {
     to { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
+/* ========================================
+   Mobile-First & Touch Optimizations
+   ======================================== */
+
+/* Improve touch targets for mobile */
+@media (hover: none) and (pointer: coarse) {
+    /* Touch-friendly button sizes (min 44x44px) */
+    button,
+    .btn,
+    .nav-menu a,
+    .toggle-details,
+    .faq-question,
+    .checklist-item,
+    .gallery-item {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Prevent iOS zoom on input focus */
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+    
+    /* Remove tap highlight on iOS */
+    a,
+    button,
+    input {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optimize for safe area on notched devices */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .header {
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .emergency-fab {
+        bottom: calc(100px + env(safe-area-inset-bottom));
+        right: calc(30px + env(safe-area-inset-right));
+    }
+    
+    .scroll-to-top {
+        bottom: calc(30px + env(safe-area-inset-bottom));
+        right: calc(30px + env(safe-area-inset-right));
+    }
+}
+
+/* Print styles */
+@media print {
+    /* Hide navigation and interactive elements */
+    .header,
+    .nav-toggle,
+    .emergency-fab,
+    .scroll-to-top,
+    .lightbox,
+    .toggle-details,
+    .footer {
+        display: none !important;
+    }
+    
+    /* Optimize layout for print */
+    .section {
+        page-break-inside: avoid;
+    }
+    
+    .day-section {
+        page-break-before: always;
+    }
+    
+    .day-section:first-child {
+        page-break-before: avoid;
+    }
+    
+    /* Show all accordion content */
+    .faq-answer,
+    .activity-details {
+        max-height: none !important;
+        display: block !important;
+    }
+    
+    /* Ensure readable text */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+    }
+    
+    /* Preserve links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+    
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+}
+
+/* Reduce motion for users with motion sensitivity */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --color-primary: #b01030;
+        --color-secondary: #0f3d23;
+    }
+    
+    .btn,
+    button {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Dark mode support (optional for future) */
+@media (prefers-color-scheme: dark) {
+    /* Currently not implemented, but placeholder for future enhancement */
+}
+
+/* Viewport-based responsive typography */
+@media (min-width: 320px) and (max-width: 1200px) {
+    html {
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1200 - 320)));
+    }
+}

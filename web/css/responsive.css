@@ -742,3 +742,165 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+/* ========================================
+   Additional Mobile-First Enhancements
+   ======================================== */
+
+/* Very Small Mobile Devices (320px - 374px) */
+@media (max-width: 374px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .hero {
+        min-height: 450px;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .card {
+        padding: var(--spacing-md);
+    }
+    
+    .day-nav-btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.75rem;
+    }
+    
+    .emergency-fab {
+        width: 50px;
+        height: 50px;
+        bottom: 70px;
+        right: 15px;
+    }
+}
+
+/* Medium Mobile Devices (375px - 480px) */
+@media (min-width: 375px) and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* Large Mobile Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    html {
+        font-size: 14.5px;
+    }
+    
+    .image-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* iPads and Tablets in Portrait (768px - 834px) */
+@media (min-width: 768px) and (max-width: 834px) {
+    .container {
+        padding: 0 var(--spacing-xl);
+    }
+}
+
+/* iPads in Landscape and Small Laptops (835px - 1024px) */
+@media (min-width: 835px) and (max-width: 1024px) {
+    .overview-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Horizontal scrolling container for mobile */
+@media (max-width: 767px) {
+    .scroll-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .scroll-container::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .scroll-container::-webkit-scrollbar-track {
+        background: var(--color-gray-100);
+        border-radius: 4px;
+    }
+    
+    .scroll-container::-webkit-scrollbar-thumb {
+        background: var(--color-primary);
+        border-radius: 4px;
+    }
+}
+
+/* Touch-friendly focus states */
+@media (hover: none) {
+    a:focus,
+    button:focus,
+    .btn:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+    
+    .nav-toggle:focus {
+        outline: 2px solid var(--color-white);
+    }
+}
+
+/* Landscape mobile - reduce vertical spacing */
+@media (max-width: 767px) and (orientation: landscape) {
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .hero {
+        min-height: 400px;
+    }
+    
+    .day-header {
+        padding: var(--spacing-md);
+    }
+}
+
+/* iPad Pro Portrait (1024px x 1366px) */
+@media (min-width: 1024px) and (max-width: 1024px) and (orientation: portrait) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Ultra-wide screens (1920px+) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .hero {
+        min-height: 850px;
+    }
+}
+
+/* Fix for iOS Safari vh units issue */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Performance optimization for mobile */
+@media (max-width: 767px) {
+    /* Reduce animation complexity on mobile */
+    .floating-decoration {
+        animation: none;
+    }
+    
+    /* Optimize images */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
