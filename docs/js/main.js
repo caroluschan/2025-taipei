@@ -323,6 +323,11 @@
                     if (i === index) {
                         section.style.display = 'block';
                         
+                        // Refresh map for this day
+                        if (typeof window.refreshDayMap === 'function') {
+                            window.refreshDayMap(index + 1);
+                        }
+                        
                         // Smooth scroll to itinerary section
                         const itinerarySection = document.getElementById('itinerary');
                         if (itinerarySection && header) {

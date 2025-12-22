@@ -254,6 +254,9 @@
     // Initialize All Maps
     // ===================================
     
+    // Store map instances globally
+    const mapInstances = {};
+    
     function initializeMaps() {
         // Wait for Leaflet to be loaded
         if (typeof L === 'undefined') {
@@ -263,16 +266,31 @@
 
         // Initialize maps for each day
         try {
-            initializeMap('map-day1', day1Locations);
-            initializeMap('map-day2', day2Locations);
-            initializeMap('map-day3', day3Locations);
-            initializeMap('map-day4', day4Locations);
+            mapInstances['map-day1'] = initializeMap('map-day1', day1Locations);
+            mapInstances['map-day2'] = initializeMap('map-day2', day2Locations);
+            mapInstances['map-day3'] = initializeMap('map-day3', day3Locations);
+            mapInstances['map-day4'] = initializeMap('map-day4', day4Locations);
             
             console.log('All maps initialized successfully');
         } catch (error) {
             console.error('Error initializing maps:', error);
         }
     }
+    
+    // Function to refresh map when its container becomes visible
+    function refreshMap(mapId) {
+        if (mapInstances[mapId]) {
+            setTimeout(() => {
+                mapInstances[mapId].invalidateSize();
+            }, 100);
+        }
+    }
+    
+    // Expose refresh function globally for use in main.js
+    window.refreshDayMap = function(dayNumber) {
+        const mapId = `map-day${dayNumber}`;
+        refreshMap(mapId);
+    };
 
     // ===================================
     // Event Listeners
@@ -297,8 +315,8 @@
                 if (target.style.display !== 'none' && target.classList.contains('day-section')) {
                     // Map container became visible, invalidate size
                     const mapId = target.querySelector('.map-container')?.id;
-                    if (mapId && window[mapId + '_instance']) {
-                        window[mapId + '_instance'].invalidateSize();
+                    if (mapId && mapInstances[mapId]) {
+                        refreshMap(mapId);
                     }
                 }
             }
