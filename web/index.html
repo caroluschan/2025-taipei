@@ -17,6 +17,12 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/icons/favicon.png">
     
+    <!-- Web App Manifest for PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="台北聖誕遊">
+    
     <title>台北聖誕之旅 2025 🎄 | 四日遊完整指南</title>
     
     <!-- CSS -->
@@ -24,16 +30,64 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/print.css" media="print">
     
-    <!-- Google Fonts -->
+    <!-- Resource Hints for Performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Preconnect to Critical Origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    
+    <!-- Google Fonts with display=swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Leaflet.js for Interactive Maps -->
+    <!-- Leaflet.js for Interactive Maps - Defer loading -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" as="script" crossorigin="">
+    
+    <!-- Performance: Inline Critical CSS for Above-the-Fold Content -->
+    <style>
+        /* Critical CSS - Inline for faster initial render */
+        body { margin: 0; font-family: 'Noto Sans TC', sans-serif; }
+        .loading-screen { 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: linear-gradient(135deg, #c41e3a 0%, #165b33 100%);
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            z-index: 10000;
+            transition: opacity 0.5s ease-out;
+        }
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .spinner { 
+            width: 60px; 
+            height: 60px; 
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
 </head>
 <body>
+    <!-- Loading Screen for Better UX -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p style="color: white; margin-top: 20px; font-size: 18px;">載入中...</p>
+        </div>
+    </div>
+
     <!-- Header & Navigation -->
     <header id="header">
         <!-- Christmas Decorations -->
@@ -2344,10 +2398,44 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    <script src="js/map.js"></script>
-    <script src="js/calculator.js"></script>
-    <script src="js/lightbox.js"></script>
+    <!-- JavaScript - Optimized Loading -->
+    <!-- Load Leaflet.js asynchronously -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" async></script>
+    
+    <!-- Chart.js from CDN with defer -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+    
+    <!-- Main Scripts - Load with defer for better performance -->
+    <script src="js/main.js" defer></script>
+    <script src="js/map.js" defer></script>
+    <script src="js/calculator.js" defer></script>
+    <script src="js/lightbox.js" defer></script>
+    
+    <!-- Performance: Hide loading screen when ready -->
+    <script>
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                    setTimeout(() => loadingScreen.remove(), 500);
+                }, 300);
+            }
+        });
+        
+        // Register Service Worker for caching
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(
+                    function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    },
+                    function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                );
+            });
+        }
+    </script>
 </body>
 </html>
