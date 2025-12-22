@@ -1,0 +1,571 @@
+/* ===================================
+   Print Styles
+   Optimized for printing the travel guide
+   =================================== */
+
+@media print {
+    /* ===================================
+       Reset & General
+       =================================== */
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+    
+    /* ===================================
+       Page Setup
+       =================================== */
+    @page {
+        margin: 2cm;
+        size: A4 portrait;
+    }
+    
+    /* ===================================
+       Hide Elements
+       =================================== */
+    #header,
+    .navbar,
+    .nav-toggle,
+    .nav-menu,
+    .hero-badges,
+    .footer,
+    button,
+    .no-print,
+    .emergency-fab,
+    .back-to-top,
+    .loading-screen,
+    .map-container,
+    .lightbox,
+    .gallery,
+    #budget-calculator,
+    .calculator-container,
+    .skip-link {
+        display: none !important;
+    }
+    
+    /* ===================================
+       Typography
+       =================================== */
+    h1 {
+        font-size: 24pt;
+        margin-top: 0;
+        page-break-after: avoid;
+    }
+    
+    h2 {
+        font-size: 18pt;
+        margin-top: 20pt;
+        page-break-after: avoid;
+    }
+    
+    h3 {
+        font-size: 14pt;
+        margin-top: 16pt;
+        page-break-after: avoid;
+    }
+    
+    h4, h5, h6 {
+        font-size: 12pt;
+        margin-top: 12pt;
+        page-break-after: avoid;
+    }
+    
+    p, li {
+        font-size: 11pt;
+        orphans: 3;
+        widows: 3;
+    }
+    
+    /* ===================================
+       Links
+       =================================== */
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #666;
+    }
+    
+    /* Don't show links for internal anchors */
+    a[href^="#"]::after {
+        content: "";
+    }
+    
+    /* ===================================
+       Hero Section
+       =================================== */
+    .hero {
+        background: none !important;
+        border-bottom: 3pt solid #000;
+        padding: 20pt 0;
+        min-height: auto;
+        page-break-after: avoid;
+    }
+    
+    .hero-overlay {
+        display: none;
+    }
+    
+    .hero-title {
+        color: #000 !important;
+        text-shadow: none !important;
+        margin-bottom: 10pt;
+    }
+    
+    .hero-subtitle,
+    .hero-date {
+        color: #000 !important;
+    }
+    
+    /* ===================================
+       Sections
+       =================================== */
+    .section {
+        padding: 20pt 0;
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        border-bottom: 2pt solid #000;
+        padding-bottom: 8pt;
+        margin-bottom: 16pt;
+    }
+    
+    .section-title::after {
+        display: none;
+    }
+    
+    /* ===================================
+       Cards & Grids
+       =================================== */
+    .card,
+    .overview-card,
+    .member-card,
+    .hotel-card,
+    .day-card,
+    .tip-card {
+        border: 1pt solid #ccc;
+        padding: 10pt;
+        margin-bottom: 10pt;
+        page-break-inside: avoid;
+        box-shadow: none !important;
+    }
+    
+    /* Flatten grids for print */
+    .overview-grid,
+    .members-grid,
+    .accommodation-grid,
+    .days-grid,
+    .tips-grid {
+        display: block;
+    }
+    
+    .overview-card,
+    .member-card,
+    .hotel-card,
+    .day-card,
+    .tip-card {
+        margin-bottom: 15pt;
+    }
+    
+    /* ===================================
+       Member Cards
+       =================================== */
+    .couple-header {
+        border-bottom: 1pt solid #000;
+        padding-bottom: 8pt;
+        margin-bottom: 10pt;
+    }
+    
+    .couple-badge {
+        display: none;
+    }
+    
+    .member-info {
+        display: block;
+    }
+    
+    .member {
+        margin-bottom: 10pt;
+    }
+    
+    .member h4 {
+        font-weight: bold;
+        margin-bottom: 6pt;
+    }
+    
+    .member ul {
+        margin-left: 15pt;
+    }
+    
+    .member li::before {
+        content: "• ";
+    }
+    
+    /* ===================================
+       Hotel Cards
+       =================================== */
+    .hotel-highlight {
+        border: 2pt solid #000;
+    }
+    
+    .hotel-header {
+        border-bottom: 1pt solid #000;
+        padding-bottom: 8pt;
+    }
+    
+    .badge-special {
+        border: 1pt solid #000;
+        padding: 4pt 8pt;
+        display: inline-block;
+    }
+    
+    /* ===================================
+       Info Boxes
+       =================================== */
+    .info-box,
+    .hotel-note {
+        border: 1pt solid #000;
+        padding: 8pt;
+        margin: 10pt 0;
+        background: #f5f5f5 !important;
+    }
+    
+    /* ===================================
+       Tables (if added later)
+       =================================== */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        page-break-inside: avoid;
+    }
+    
+    th, td {
+        border: 1pt solid #000;
+        padding: 6pt;
+        text-align: left;
+    }
+    
+    th {
+        background: #f0f0f0 !important;
+        font-weight: bold;
+    }
+    
+    /* ===================================
+       Lists
+       =================================== */
+    ul, ol {
+        margin-left: 20pt;
+    }
+    
+    li {
+        margin-bottom: 4pt;
+    }
+    
+    /* ===================================
+       Page Breaks
+       =================================== */
+    .page-break {
+        page-break-after: always;
+    }
+    
+    .page-break-before {
+        page-break-before: always;
+    }
+    
+    .no-break {
+        page-break-inside: avoid;
+    }
+    
+    /* ===================================
+       Images (for future use)
+       =================================== */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+    
+    /* ===================================
+       Container
+       =================================== */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* ===================================
+       Utility
+       =================================== */
+    .text-muted {
+        color: #666 !important;
+        font-size: 10pt;
+    }
+    
+    /* ===================================
+       Header for Each Page
+       =================================== */
+    @page :first {
+        margin-top: 1cm;
+    }
+    
+    /* ===================================
+       Footer Note
+       =================================== */
+    .footer-bottom {
+        display: block !important;
+        margin-top: 20pt;
+        padding-top: 10pt;
+        border-top: 1pt solid #000;
+        font-size: 9pt;
+        text-align: center;
+    }
+    
+    /* ===================================
+       Expand Collapsed Sections
+       =================================== */
+    .toggle-details {
+        display: none !important;
+    }
+    
+    .details-content,
+    .faq-answer {
+        display: block !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    .faq-item {
+        page-break-inside: avoid;
+        border: 1pt solid #ccc;
+        padding: 10pt;
+        margin-bottom: 10pt;
+    }
+    
+    .faq-question {
+        font-weight: bold;
+        margin-bottom: 8pt;
+        cursor: default;
+    }
+    
+    .faq-question::after {
+        display: none !important;
+    }
+    
+    /* ===================================
+       Map Link Replacements
+       =================================== */
+    .map-link::after {
+        content: " [位置: " attr(data-location) "]";
+        font-size: 9pt;
+        color: #666;
+    }
+    
+    /* Show map coordinates or addresses */
+    .location-info {
+        display: block !important;
+        font-size: 10pt;
+        color: #666;
+        margin-top: 4pt;
+    }
+    
+    /* ===================================
+       Print-Specific Content
+       =================================== */
+    .print-only {
+        display: block !important;
+    }
+    
+    .print-note {
+        border: 2pt dashed #000;
+        padding: 10pt;
+        margin: 15pt 0;
+        font-size: 10pt;
+        page-break-inside: avoid;
+    }
+    
+    .print-header {
+        display: block;
+        text-align: center;
+        margin-bottom: 15pt;
+        padding-bottom: 10pt;
+        border-bottom: 2pt solid #000;
+    }
+    
+    .print-date {
+        font-size: 10pt;
+        color: #666;
+        margin-top: 5pt;
+    }
+    
+    /* ===================================
+       QR Code Containers
+       =================================== */
+    .qr-code {
+        display: inline-block;
+        padding: 5pt;
+        border: 1pt solid #ccc;
+        margin: 5pt;
+        page-break-inside: avoid;
+    }
+    
+    .qr-code img {
+        width: 80pt;
+        height: 80pt;
+    }
+    
+    .qr-label {
+        font-size: 9pt;
+        text-align: center;
+        margin-top: 4pt;
+    }
+    
+    /* ===================================
+       Emergency Information
+       =================================== */
+    .emergency-print {
+        border: 3pt solid #000;
+        padding: 15pt;
+        margin: 20pt 0;
+        page-break-inside: avoid;
+    }
+    
+    .emergency-print h3 {
+        margin-top: 0;
+        font-size: 16pt;
+        font-weight: bold;
+    }
+    
+    .emergency-print .contact-item {
+        margin: 8pt 0;
+        font-size: 11pt;
+    }
+    
+    .emergency-print .phone {
+        font-weight: bold;
+        font-size: 14pt;
+    }
+    
+    /* ===================================
+       Accommodation Details
+       =================================== */
+    .accommodation-details {
+        border: 2pt solid #000;
+        padding: 12pt;
+        margin: 15pt 0;
+        page-break-inside: avoid;
+    }
+    
+    .accommodation-details h4 {
+        margin-top: 0;
+        font-size: 14pt;
+    }
+    
+    /* ===================================
+       Day Itinerary Enhancement
+       =================================== */
+    .day-card {
+        border: 2pt solid #000 !important;
+        margin-bottom: 20pt !important;
+    }
+    
+    .day-header {
+        background: #f0f0f0 !important;
+        padding: 10pt;
+        border-bottom: 1pt solid #000;
+    }
+    
+    .activity-item {
+        page-break-inside: avoid;
+        margin: 10pt 0;
+        padding-left: 15pt;
+        border-left: 2pt solid #ccc;
+    }
+    
+    .time-badge {
+        font-weight: bold;
+        font-size: 11pt;
+    }
+    
+    /* ===================================
+       Tips & Important Info
+       =================================== */
+    .tip-card,
+    .info-card {
+        border-left: 3pt solid #000;
+        padding-left: 10pt;
+        margin: 10pt 0;
+        page-break-inside: avoid;
+    }
+    
+    .tip-icon,
+    .info-icon {
+        display: inline;
+        font-weight: bold;
+    }
+    
+    /* ===================================
+       Budget Summary Print
+       =================================== */
+    .budget-summary-print {
+        display: table !important;
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15pt 0;
+    }
+    
+    .budget-summary-print .row {
+        display: table-row;
+    }
+    
+    .budget-summary-print .cell {
+        display: table-cell;
+        border: 1pt solid #000;
+        padding: 6pt;
+    }
+    
+    .budget-summary-print .header {
+        background: #f0f0f0 !important;
+        font-weight: bold;
+    }
+    
+    .budget-total {
+        border-top: 3pt double #000 !important;
+        font-weight: bold;
+        font-size: 12pt;
+    }
+    
+    /* ===================================
+       Checklist Items
+       =================================== */
+    .checklist {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    
+    .checklist li::before {
+        content: "☐ ";
+        font-size: 14pt;
+        margin-right: 5pt;
+    }
+    
+    .checklist li {
+        margin-bottom: 6pt;
+    }
+}
+

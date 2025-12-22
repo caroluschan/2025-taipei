@@ -1,0 +1,23 @@
+# robots.txt for Taipei Christmas Travel Guide 2025
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://caroluschan.github.io/2025-taipei/sitemap.xml
+
+# Disallow specific paths (if any)
+# None currently - all content is public
+
+# Crawl-delay (optional, in seconds)
+# Crawl-delay: 1
+
+# Additional directives for specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
