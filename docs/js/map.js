@@ -241,11 +241,15 @@
             markers.push(marker);
         });
 
-        // Fit bounds to show all markers
+        // Store marker group for bounds fitting
+        let markerGroup = null;
         if (markers.length > 0) {
-            const group = L.featureGroup(markers);
-            map.fitBounds(group.getBounds().pad(0.1));
+            markerGroup = L.featureGroup(markers);
+            map.fitBounds(markerGroup.getBounds().pad(0.1));
         }
+
+        // Store marker group with map instance for later use
+        map.markerGroup = markerGroup;
 
         return map;
     }
@@ -281,7 +285,12 @@
     function refreshMap(mapId) {
         if (mapInstances[mapId]) {
             setTimeout(() => {
-                mapInstances[mapId].invalidateSize();
+                const map = mapInstances[mapId];
+                map.invalidateSize();
+                // Re-fit bounds to show all markers properly
+                if (map.markerGroup) {
+                    map.fitBounds(map.markerGroup.getBounds().pad(0.1));
+                }
             }, 100);
         }
     }
