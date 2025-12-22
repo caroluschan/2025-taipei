@@ -558,3 +558,218 @@ document.addEventListener('DOMContentLoaded', function() {
     // ... existing initialization code ...
     initImportantInfo();
 });
+
+// ===================================
+// Emergency Modal Functionality
+// ===================================
+function initEmergencyModal() {
+    const emergencyFab = document.getElementById('emergency-fab');
+    const emergencyModal = document.getElementById('emergency-modal');
+    const closeModalBtn = document.getElementById('close-emergency-modal');
+    const modalOverlay = document.querySelector('.emergency-modal-overlay');
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    const downloadBtn = document.getElementById('download-contacts');
+    const printBtn = document.getElementById('print-contacts');
+    
+    // Open modal
+    function openEmergencyModal() {
+        emergencyModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Trap focus within modal
+        const focusableElements = emergencyModal.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+        
+        firstFocusable.focus();
+        
+        // Handle Tab key for focus trap
+        emergencyModal.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                if (e.shiftKey) {
+                    if (document.activeElement === firstFocusable) {
+                        e.preventDefault();
+                        lastFocusable.focus();
+                    }
+                } else {
+                    if (document.activeElement === lastFocusable) {
+                        e.preventDefault();
+                        firstFocusable.focus();
+                    }
+                }
+            }
+        });
+    }
+    
+    // Close modal
+    function closeEmergencyModal() {
+        emergencyModal.classList.remove('active');
+        document.body.style.overflow = '';
+        emergencyFab.focus();
+    }
+    
+    // Copy to clipboard
+    function copyToClipboard(text, button) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+                showCopySuccess(button);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                fallbackCopy(text, button);
+            });
+        } else {
+            fallbackCopy(text, button);
+        }
+    }
+    
+    // Fallback copy method for older browsers
+    function fallbackCopy(text, button) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        
+        try {
+            document.execCommand('copy');
+            showCopySuccess(button);
+        } catch (err) {
+            console.error('Fallback copy failed:', err);
+        }
+        
+        document.body.removeChild(textArea);
+    }
+    
+    // Show copy success feedback
+    function showCopySuccess(button) {
+        button.classList.add('copied');
+        const originalHTML = button.innerHTML;
+        button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        
+        setTimeout(() => {
+            button.classList.remove('copied');
+            button.innerHTML = originalHTML;
+        }, 2000);
+    }
+    
+    // Download contact card as text file
+    function downloadContactCard() {
+        const contactData = `
+🆘 台北旅遊緊急聯絡卡
+=========================
+
+📅 旅遊日期：2025年12月25日-28日
+
+🚨 緊急服務
+-----------
+警察局：110
+消防/救護車：119
+
+🏥 醫院
+-------
+台大醫院：02-2312-3456
+國泰綜合醫院：02-2708-2121
+
+🇭🇰 香港辦事處
+--------------
+香港經濟貿易文化辦事處：02-2525-8316
+地址：台北市松山區松高路9-11號26樓
+
+🏨 住宿酒店
+-----------
+（請在訂房確認後手動填寫）
+酒店名稱：_______________
+酒店電話：_______________
+酒店地址：_______________
+
+📝 重要提醒
+-----------
+- 請將此卡列印並隨身攜帶
+- 建議存一份在手機相簿中離線查看
+- 如有緊急情況，請先撥打110或119
+- 保持冷靜，清楚說明所在位置
+
+=========================
+Generated: ${new Date().toLocaleString('zh-TW')}
+        `;
+        
+        const blob = new Blob([contactData], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = '台北旅遊緊急聯絡卡.txt';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        
+        // Show notification
+        showNotification('✅ 聯絡卡已下載！');
+    }
+    
+    // Print contact card
+    function printContactCard() {
+        window.print();
+    }
+    
+    // Show notification (reuse from checklist)
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'checklist-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary), #a01729);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 10001;
+            animation: slideIn 0.3s ease-out;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease-out';
+            setTimeout(() => notification.remove(), 300);
+        }, 2000);
+    }
+    
+    // Event listeners
+    if (emergencyFab) emergencyFab.addEventListener('click', openEmergencyModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeEmergencyModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeEmergencyModal);
+    
+    // Escape key to close modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && emergencyModal.classList.contains('active')) {
+            closeEmergencyModal();
+        }
+    });
+    
+    // Copy buttons
+    copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const textToCopy = this.getAttribute('data-copy');
+            copyToClipboard(textToCopy, this);
+        });
+    });
+    
+    // Download and print buttons
+    if (downloadBtn) downloadBtn.addEventListener('click', downloadContactCard);
+    if (printBtn) printBtn.addEventListener('click', printContactCard);
+}
+
+// ===================================
+// Update Main Initialization
+// ===================================
+const originalDOMContentLoaded = document.addEventListener('DOMContentLoaded', function() {
+    initImportantInfo();
+    initEmergencyModal();
+});

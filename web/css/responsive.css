@@ -608,3 +608,57 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* ========================================
+   Emergency Features - Mobile
+   ======================================== */
+
+@media (max-width: 767px) {
+    .emergency-fab {
+        bottom: 80px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+    }
+    
+    .emergency-modal-content {
+        width: 95%;
+        max-height: 90vh;
+        border-radius: 12px;
+    }
+    
+    .emergency-modal-header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .emergency-modal-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .emergency-modal-body {
+        padding: 1rem 1.5rem;
+    }
+    
+    .emergency-modal-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-number {
+        font-size: 1.1rem;
+    }
+    
+    .emergency-modal-footer {
+        padding: 1rem;
+        flex-direction: column;
+    }
+    
+    .emergency-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .copy-btn {
+        width: 32px;
+        height: 32px;
+    }
+}

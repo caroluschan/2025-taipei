@@ -2743,3 +2743,338 @@ strong {
         max-height: none !important;
     }
 }
+
+/* ========================================
+   Emergency Floating Button & Modal
+   ======================================== */
+
+/* Floating Action Button */
+.emergency-fab {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d63031, #ff0000);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(214, 48, 49, 0.4);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    animation: emergencyPulse 2s infinite;
+}
+
+.emergency-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(214, 48, 49, 0.6);
+}
+
+.emergency-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #d63031;
+    animation: pulse 2s infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes emergencyPulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(214, 48, 49, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(214, 48, 49, 0.8);
+    }
+}
+
+/* Emergency Modal */
+.emergency-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.emergency-modal.active {
+    display: flex;
+}
+
+.emergency-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s;
+}
+
+.emergency-modal-content {
+    position: relative;
+    background: white;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 85vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease-out;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Modal Header */
+.emergency-modal-header {
+    background: linear-gradient(135deg, #d63031, #ff0000);
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #ff0000;
+}
+
+.emergency-modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.emergency-modal-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.emergency-modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Modal Body */
+.emergency-modal-body {
+    padding: 1.5rem 2rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.emergency-modal-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.emergency-modal-section:last-child {
+    border-bottom: none;
+}
+
+.emergency-modal-section h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+.priority-section h3 {
+    color: #d63031;
+}
+
+/* Emergency Contact List */
+.emergency-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.emergency-contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.emergency-contact-item:hover {
+    background: #e9ecef;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-name {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.contact-number {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.contact-number:hover {
+    color: #a01729;
+}
+
+.contact-note {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.contact-address {
+    margin: 0.5rem 0 0 1rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Copy Button */
+.copy-btn {
+    background: white;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+.copy-btn.copied {
+    background: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+/* Modal Footer */
+.emergency-modal-footer {
+    padding: 1.5rem 2rem;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.emergency-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, var(--primary), #a01729);
+    color: white;
+    box-shadow: 0 2px 8px rgba(196, 30, 58, 0.3);
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(196, 30, 58, 0.4);
+}
+
+.print-btn {
+    background: linear-gradient(135deg, #6c757d, #545b62);
+    color: white;
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+}
+
+.print-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+}
+
+/* Print Styles for Emergency Contacts */
+@media print {
+    .emergency-modal-overlay,
+    .emergency-modal-close,
+    .emergency-modal-footer {
+        display: none;
+    }
+    
+    .emergency-modal-content {
+        box-shadow: none;
+        max-height: none;
+        border: 1px solid #ddd;
+    }
+    
+    .emergency-contact-item {
+        page-break-inside: avoid;
+    }
+    
+    .copy-btn {
+        display: none;
+    }
+}

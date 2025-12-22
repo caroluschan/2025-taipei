@@ -2031,6 +2031,141 @@
         </svg>
     </button>
 
+    <!-- Emergency Floating Button -->
+    <button id="emergency-fab" class="emergency-fab" aria-label="緊急聯絡" title="緊急聯絡資訊">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="white"/>
+        </svg>
+        <span class="emergency-pulse"></span>
+    </button>
+
+    <!-- Emergency Modal -->
+    <div id="emergency-modal" class="emergency-modal" role="dialog" aria-labelledby="emergency-modal-title" aria-modal="true">
+        <div class="emergency-modal-overlay"></div>
+        <div class="emergency-modal-content">
+            <div class="emergency-modal-header">
+                <h2 id="emergency-modal-title">🆘 緊急聯絡資訊</h2>
+                <button id="close-emergency-modal" class="emergency-modal-close" aria-label="關閉">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="emergency-modal-body">
+                <!-- Emergency Services -->
+                <div class="emergency-modal-section priority-section">
+                    <h3>🚨 緊急服務</h3>
+                    <div class="emergency-contact-list">
+                        <div class="emergency-contact-item">
+                            <div class="contact-info">
+                                <span class="contact-name">警察局</span>
+                                <a href="tel:110" class="contact-number">110</a>
+                            </div>
+                            <button class="copy-btn" data-copy="110" aria-label="複製號碼">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="emergency-contact-item">
+                            <div class="contact-info">
+                                <span class="contact-name">消防/救護車</span>
+                                <a href="tel:119" class="contact-number">119</a>
+                            </div>
+                            <button class="copy-btn" data-copy="119" aria-label="複製號碼">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospitals -->
+                <div class="emergency-modal-section">
+                    <h3>🏥 醫院</h3>
+                    <div class="emergency-contact-list">
+                        <div class="emergency-contact-item">
+                            <div class="contact-info">
+                                <span class="contact-name">台大醫院</span>
+                                <a href="tel:+886-2-2312-3456" class="contact-number">02-2312-3456</a>
+                            </div>
+                            <button class="copy-btn" data-copy="+886-2-2312-3456" aria-label="複製號碼">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="emergency-contact-item">
+                            <div class="contact-info">
+                                <span class="contact-name">國泰綜合醫院</span>
+                                <a href="tel:+886-2-2708-2121" class="contact-number">02-2708-2121</a>
+                            </div>
+                            <button class="copy-btn" data-copy="+886-2-2708-2121" aria-label="複製號碼">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hong Kong Office -->
+                <div class="emergency-modal-section">
+                    <h3>🇭🇰 香港辦事處</h3>
+                    <div class="emergency-contact-list">
+                        <div class="emergency-contact-item">
+                            <div class="contact-info">
+                                <span class="contact-name">香港經濟貿易文化辦事處</span>
+                                <a href="tel:+886-2-2525-8316" class="contact-number">02-2525-8316</a>
+                            </div>
+                            <button class="copy-btn" data-copy="+886-2-2525-8316" aria-label="複製號碼">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="contact-address">地址：台北市松山區松高路9-11號26樓</p>
+                    </div>
+                </div>
+
+                <!-- Hotel Contacts -->
+                <div class="emergency-modal-section">
+                    <h3>🏨 住宿酒店</h3>
+                    <div class="emergency-contact-list">
+                        <div class="emergency-contact-item">
+                            <div class="contact-info">
+                                <span class="contact-name">酒店總機</span>
+                                <span class="contact-note">（待確認訂房後更新）</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="emergency-modal-footer">
+                <button id="download-contacts" class="emergency-btn download-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    下載聯絡卡
+                </button>
+                <button id="print-contacts" class="emergency-btn print-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="6 9 6 2 18 2 18 9" stroke="currentColor" stroke-width="2"/>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" stroke="currentColor" stroke-width="2"/>
+                        <rect x="6" y="14" width="12" height="8" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    列印聯絡卡
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
