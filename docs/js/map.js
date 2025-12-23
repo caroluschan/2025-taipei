@@ -271,60 +271,92 @@
             return;
         }
         
-        // Find all map containers
-        const mapContainers = document.querySelectorAll('.map-container');
-        
-        mapContainers.forEach(container => {
-            const mapId = container.id;
-            const centerLat = parseFloat(container.dataset.centerLat);
-            const centerLng = parseFloat(container.dataset.centerLng);
-            const markersData = JSON.parse(container.dataset.markers || '[]');
-            
-            if (!mapId || !centerLat || !centerLng) {
-                console.warn('Missing map data for', mapId);
-                return;
-            }
-            
-            // Convert markers data to location format
-            const locations = markersData.map(marker => ({
-                name: marker.title,
-                type: 'attraction', // Default type
-                icon: '📍',
-                coords: [marker.lat, marker.lng],
-                description: marker.title,
-                googleMaps: `https://www.google.com/maps/search/?api=1&query=${marker.lat},${marker.lng}`
-            }));
-            
-            // Initialize the map
-            if (locations.length > 0) {
-                mapInstances[mapId] = initializeMap(mapId, locations);
-            }
-        });
-        
-        console.log('Dynamic maps initialized');
+        // Fetch itinerary data
+        fetch('data/itinerary_v2.json')
+            .then(response => response.json())
+            .then(data => {
+                if (!data.days || !Array.isArray(data.days)) {
+                    console.error('Invalid itinerary data structure');
+                    return;
+                }
+                
+                // Initialize map for each day
+                data.days.forEach((day, index) => {
+                    if (!day.dayMap || !day.dayMap.markers) {
+                        console.warn(`No map data for day ${day.day}`);
+                        return;
+                    }
+                    
+                    const mapId = `map-day${day.day}`;
+                    const mapContainer = document.getElementById(mapId);
+                    
+                    if (!mapContainer) {
+                        console.warn(`Map container ${mapId} not found`);
+                        return;
+                    }
+                    
+                    // Convert markers from itinerary_v2.json format to map locations format
+                    const locations = day.dayMap.markers.map(marker => {
+                        // Determine type and icon from agenda data
+                        let type = 'attraction';
+                        let icon = '📍';
+                        
+                        // Try to find matching agenda item to get category
+                        const agenda = day.agendas?.find(a => a.id === marker.id);
+                        if (agenda) {
+                            switch(agenda.category) {
+                                case 'food':
+                                    type = 'food';
+                                    icon = '🍽️';
+                                    break;
+                                case 'logistics':
+                                    type = 'hotel';
+                                    icon = '🏨';
+                                    break;
+                                case 'transport':
+                                    type = 'transport';
+                                    icon = '✈️';
+                                    break;
+                                case 'shopping':
+                                    type = 'attraction';
+                                    icon = '🛍️';
+                                    break;
+                                default:
+                                    type = 'attraction';
+                                    icon = '🏛️';
+                            }
+                        }
+                        
+                        return {
+                            name: marker.title,
+                            type: type,
+                            icon: icon,
+                            coords: [marker.lat, marker.lng],
+                            description: marker.title,
+                            googleMaps: `https://www.google.com/maps/search/?api=1&query=${marker.lat},${marker.lng}`
+                        };
+                    });
+                    
+                    // Initialize the map with the locations
+                    if (locations.length > 0) {
+                        mapInstances[mapId] = initializeMap(mapId, locations);
+                        console.log(`Initialized ${mapId} with ${locations.length} markers`);
+                    }
+                });
+                
+                console.log('Dynamic maps initialized from itinerary_v2.json');
+            })
+            .catch(error => {
+                console.error('Error loading itinerary data:', error);
+            });
     }
     
     // Expose the function globally
     window.initializeDynamicMaps = initializeDynamicMaps;
     
     function initializeMaps() {
-        // Wait for Leaflet to be loaded
-        if (typeof L === 'undefined') {
-            console.error('Leaflet library not loaded');
-            return;
-        }
-
-        // Initialize maps for each day
-        try {
-            mapInstances['map-day1'] = initializeMap('map-day1', day1Locations);
-            mapInstances['map-day2'] = initializeMap('map-day2', day2Locations);
-            mapInstances['map-day3'] = initializeMap('map-day3', day3Locations);
-            mapInstances['map-day4'] = initializeMap('map-day4', day4Locations);
-            
-            console.log('All maps initialized successfully');
-        } catch (error) {
-            console.error('Error initializing maps:', error);
-        }
+        // Use dynamic maps from itinerary_v2.json instead of hardcoded data
+        initializeDynamicMaps();
     }
     
     // Function to refresh map when its container becomes visible
