@@ -230,7 +230,7 @@
         "markers": [
           {
             "id": "D1-01",
-            "title": "Check-in / drop luggage @ Jingtan Youth Hostel",
+            "title": "入住 / 寄放行李 @ 見潭青年旅舍",
             "lat": 25.0839,
             "lng": 121.5244
           },
@@ -261,14 +261,14 @@
             "start": "11:30",
             "end": "13:00"
           },
-          "title": "Check-in / drop luggage @ Jingtan Youth Hostel",
+          "title": "入住 / 寄放行李 @ 見潭青年旅舍",
           "category": "logistics",
           "location": {
-            "name": "Jingtan Youth Hostel",
+            "name": "見潭青年旅舍",
             "address": "111 台北市士林區基河路16號 (Jiantan Youth Activity Center)",
             "lat": 25.0839,
             "lng": 121.5244,
-            "googleMapQuery": "Jingtan Youth Hostel Taipei"
+            "googleMapQuery": "見潭青年旅舍 台北"
           },
           "galleryImageUrls": [],
           "whatToDo": "從桃園抵達台北。放下行李，快速梳洗，購買/儲值悠遊卡，並決定誰攜帶團體行動電源和雨傘。",
@@ -295,7 +295,7 @@
             "start": "13:20",
             "end": "16:30"
           },
-          "title": "臺北市立兒童新樂園 (Taipei Children's Amusement Park)",
+          "title": "臺北市立兒童新樂園",
           "category": "attraction",
           "location": {
             "name": "臺北市立兒童新樂園",
@@ -308,7 +308,7 @@
             "https://www.travel.taipei/image/65604"
           ],
           "whatToDo": "玩3–5個招牌遊樂設施（摩天輪、雲霄飛車、海盜船）。使用悠遊卡入場/乘坐設施。如果天氣不好，縮短時間並提早前往科教館室內展覽。",
-          "whyGo": "It’s the most efficient 'family fun' block in Shilin: compact, many rides, and EasyCard-based entry makes it fast for a group.",
+          "whyGo": "這是士林區最有效率的「家庭娛樂」區塊：緊湊、多個遊樂設施，且使用悠遊卡入場讓團體行動快速。",
           "thingsToPayAttention": [
             "週末/假日會很擁擠——提早買票，優先玩2–3個必玩設施。",
             "Annie：避免長時間站立；分成2個小組輪流玩設施。",
@@ -369,7 +369,7 @@
             "start": "19:00",
             "end": "21:30"
           },
-          "title": "士林夜市 (Shilin Night Market) dinner + snack crawl",
+          "title": "士林夜市 晚餐 + 小吃巡禮",
           "category": "food",
           "location": {
             "name": "士林夜市",
@@ -417,7 +417,7 @@
           },
           {
             "id": "D2-02",
-            "title": "Lunch near Dadaocheng (comfort Taiwanese)",
+            "title": "大稻埕/迪化街 午餐區",
             "lat": 25.055104,
             "lng": 121.51003
           },
@@ -480,7 +480,7 @@
             "start": "12:30",
             "end": "13:30"
           },
-          "title": "Lunch near Dadaocheng (comfort Taiwanese)",
+          "title": "大稻埕/迪化街 午餐區",
           "category": "food",
           "location": {
             "name": "大稻埕/迪化街 午餐區",
@@ -607,7 +607,7 @@
         "markers": [
           {
             "id": "D3-01",
-            "title": "Move to Beitou / drop luggage @ Beitou hotel",
+            "title": "移動到北投 / 寄放行李 @ 北投天玥泉會館",
             "lat": 25.137,
             "lng": 121.5065
           },
@@ -625,7 +625,7 @@
           },
           {
             "id": "D3-04",
-            "title": "Lunch in Xinbeitou (hot spring town eats)",
+            "title": "新北投 午餐區",
             "lat": 25.13665,
             "lng": 121.50346
           },
@@ -656,14 +656,14 @@
             "start": "09:30",
             "end": "10:30"
           },
-          "title": "Move to Beitou / drop luggage @ Beitou hotel",
+          "title": "移動到北投 / 寄放行李 @ 北投天玥泉會館",
           "category": "logistics",
           "location": {
-            "name": "Beitou hotel area",
+            "name": "北投天玥泉會館",
             "address": "台北市北投區 (你們第3晚酒店附近)",
             "lat": 25.137,
             "lng": 121.5065,
-            "googleMapQuery": "Beitou Taipei hotel"
+            "googleMapQuery": "北投天玥泉會館 台北市北投區"
           },
           "galleryImageUrls": [],
           "whatToDo": "從士林區酒店退房 → 搭計程車/捷運到北投。放下行李，換成輕便背包進行溫泉小鎮散步。",
@@ -756,7 +756,7 @@
             "start": "13:00",
             "end": "14:00"
           },
-          "title": "Lunch in Xinbeitou (hot spring town eats)",
+          "title": "新北投 午餐區",
           "category": "food",
           "location": {
             "name": "新北投 午餐區",
@@ -895,19 +895,19 @@
           },
           {
             "id": "D4-02",
-            "title": "Lunch near Taipei Main Station / Zhongxiao East Rd.",
+            "title": "台北車站周邊 午餐區",
             "lat": 25.0455,
             "lng": 121.525
           },
           {
             "id": "D4-03",
-            "title": "Last-minute shopping + packing + pick up luggage",
+            "title": "最後購物 + 打包 + 取回行李",
             "lat": 25.0478,
             "lng": 121.517
           },
           {
             "id": "D4-04",
-            "title": "Airport transfer + departure (TPE)",
+            "title": "機場接送 + 離境 (TPE)",
             "lat": 25.0797,
             "lng": 121.2342
           }
@@ -956,7 +956,7 @@
             "start": "12:00",
             "end": "13:30"
           },
-          "title": "Lunch near Taipei Main Station / Zhongxiao East Rd.",
+          "title": "台北車站周邊 午餐區",
           "category": "food",
           "location": {
             "name": "台北車站周邊 午餐區",
@@ -986,7 +986,7 @@
             "start": "14:00",
             "end": "16:30"
           },
-          "title": "Last-minute shopping + packing + pick up luggage",
+          "title": "最後購物 + 打包 + 取回行李",
           "category": "logistics",
           "location": {
             "name": "台北車站/周邊",
@@ -1016,7 +1016,7 @@
             "start": "17:30",
             "end": "21:10"
           },
-          "title": "Airport transfer + departure (TPE)",
+          "title": "機場接送 + 離境 (TPE)",
           "category": "transport",
           "location": {
             "name": "桃園國際機場 (TPE)",
