@@ -1,9 +1,9 @@
 // Service Worker for Taipei Christmas Travel Guide 2025
-// Version 1.1.0
+// Version 1.2.0
 // Implements caching strategy for offline support and performance
 
-const CACHE_NAME = 'taipei-travel-v1.1.0';
-const RUNTIME_CACHE = 'taipei-runtime-v1.1.0';
+const CACHE_NAME = 'taipei-travel-v1.2.0';
+const RUNTIME_CACHE = 'taipei-runtime-v1.2.0';
 
 // Resources to cache immediately
 const PRECACHE_URLS = [
@@ -18,7 +18,8 @@ const PRECACHE_URLS = [
     '/js/lightbox.js',
     '/js/print.js',
     '/js/pwa-install.js',
-    '/data/itinerary.json',
+    '/js/itinerary-loader.js',
+    '/data/itinerary_v2.json',
     '/manifest.json',
     '/images/icons/icon-192.svg',
     '/images/icons/icon-512.svg'

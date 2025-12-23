@@ -3866,3 +3866,283 @@ textarea:focus,
         display: none !important;
     }
 }
+
+/* ===================================
+   Itinerary V2 - New Components
+   =================================== */
+
+/* Activity Location */
+.activity-location {
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.location-name {
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-xs);
+}
+
+.location-address {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-sm);
+}
+
+.location-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.location-map-link:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
+/* Activity Description (What to Do) */
+.activity-description {
+    background-color: #f0f9ff;
+    border-left: 3px solid #3b82f6;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.description-title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.description-text {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-700);
+    line-height: 1.7;
+}
+
+/* Activity Why (Why Go) */
+.activity-why {
+    background-color: #fef3c7;
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.why-title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.why-text {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-700);
+    line-height: 1.7;
+}
+
+/* Activity Attention (Things to Pay Attention) */
+.activity-attention {
+    background-color: #fee2e2;
+    border-left: 3px solid #ef4444;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.attention-title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.attention-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.attention-item {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-700);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: var(--spacing-xs);
+}
+
+.attention-item:before {
+    content: "⚠️";
+    position: absolute;
+    left: 0;
+}
+
+.attention-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Activity Gallery */
+.activity-gallery {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.gallery-title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-md);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    aspect-ratio: 4 / 3;
+    background-color: var(--color-gray-100);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+    cursor: pointer;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+/* Activity Sources */
+.activity-sources {
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.sources-title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.sources-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.source-item {
+    margin-bottom: var(--spacing-xs);
+}
+
+.source-item:last-child {
+    margin-bottom: 0;
+}
+
+.source-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.source-link:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
+.source-link:before {
+    content: "🔗";
+}
+
+/* Transport Tag */
+.transport-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background-color: var(--color-gray-100);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-700);
+}
+
+/* Error Message */
+.error-message {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--color-gray-600);
+}
+
+.error-message p {
+    font-size: var(--font-size-lg);
+}
+
+/* Category Badges for V2 */
+.activity-badge.logistics {
+    background-color: #6366f1;
+}
+
+.activity-badge.shopping {
+    background-color: #ec4899;
+}
+
+.activity-badge.transport {
+    background-color: #14b8a6;
+}
+
+.activity-badge.rest {
+    background-color: #84cc16;
+}
+
+.activity-badge.default {
+    background-color: var(--color-gray-500);
+}
+
+/* Responsive adjustments for new components */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: var(--spacing-sm);
+    }
+    
+    .activity-description,
+    .activity-why,
+    .activity-attention {
+        padding: var(--spacing-sm);
+    }
+}
+
+@media print {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-item {
+        page-break-inside: avoid;
+    }
+}

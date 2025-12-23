@@ -261,6 +261,52 @@
     // Store map instances globally
     const mapInstances = {};
     
+    /**
+     * Initialize maps from dynamic data (used with itinerary_v2.json)
+     */
+    function initializeDynamicMaps() {
+        // Wait for Leaflet to be loaded
+        if (typeof L === 'undefined') {
+            console.error('Leaflet library not loaded');
+            return;
+        }
+        
+        // Find all map containers
+        const mapContainers = document.querySelectorAll('.map-container');
+        
+        mapContainers.forEach(container => {
+            const mapId = container.id;
+            const centerLat = parseFloat(container.dataset.centerLat);
+            const centerLng = parseFloat(container.dataset.centerLng);
+            const markersData = JSON.parse(container.dataset.markers || '[]');
+            
+            if (!mapId || !centerLat || !centerLng) {
+                console.warn('Missing map data for', mapId);
+                return;
+            }
+            
+            // Convert markers data to location format
+            const locations = markersData.map(marker => ({
+                name: marker.title,
+                type: 'attraction', // Default type
+                icon: '📍',
+                coords: [marker.lat, marker.lng],
+                description: marker.title,
+                googleMaps: `https://www.google.com/maps/search/?api=1&query=${marker.lat},${marker.lng}`
+            }));
+            
+            // Initialize the map
+            if (locations.length > 0) {
+                mapInstances[mapId] = initializeMap(mapId, locations);
+            }
+        });
+        
+        console.log('Dynamic maps initialized');
+    }
+    
+    // Expose the function globally
+    window.initializeDynamicMaps = initializeDynamicMaps;
+    
     function initializeMaps() {
         // Wait for Leaflet to be loaded
         if (typeof L === 'undefined') {
