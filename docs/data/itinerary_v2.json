@@ -230,25 +230,25 @@
         "markers": [
           {
             "id": "D1-01",
-            "title": "入住 / 寄放行李 @ 見潭青年旅舍",
+            "title": "入住 / 寄放行李 @ 台北見潭璞旅",
             "lat": 25.0839,
             "lng": 121.5244
           },
           {
             "id": "D1-02",
-            "title": "臺北市立兒童新樂園 (Taipei Children's Amusement Park)",
+            "title": "臺北市立兒童新樂園",
             "lat": 25.09724,
             "lng": 121.51494
           },
           {
             "id": "D1-03",
-            "title": "國立臺灣科學教育館 (NTSEC)",
+            "title": "國立臺灣科學教育館",
             "lat": 25.09613,
             "lng": 121.51669
           },
           {
             "id": "D1-04",
-            "title": "士林夜市 (Shilin Night Market) dinner + snack crawl",
+            "title": "士林夜市",
             "lat": 25.086887,
             "lng": 121.52536
           }
@@ -261,14 +261,14 @@
             "start": "11:30",
             "end": "13:00"
           },
-          "title": "入住 / 寄放行李 @ 見潭青年旅舍",
+          "title": "入住 / 寄放行李 @ 台北見潭璞旅",
           "category": "logistics",
           "location": {
-            "name": "見潭青年旅舍",
+            "name": "台北見潭璞旅",
             "address": "111 台北市士林區基河路16號 (Jiantan Youth Activity Center)",
             "lat": 25.0839,
             "lng": 121.5244,
-            "googleMapQuery": "見潭青年旅舍 台北"
+            "googleMapQuery": "台北見潭璞旅 台北"
           },
           "galleryImageUrls": [],
           "whatToDo": "從桃園抵達台北。放下行李，快速梳洗，購買/儲值悠遊卡，並決定誰攜帶團體行動電源和雨傘。",
@@ -279,7 +279,7 @@
           ],
           "sources": [
             {
-              "title": "見潭青年旅舍",
+              "title": "台北見潭璞旅",
               "url": "#"
             }
           ],
